@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-26T22:26:05+00:00",
- "tracking_since": null,
+ "generated_at": "2026-09-26T22:46:31+00:00",
+ "tracking_since": "2026-09-26T22:46:31+00:00",
  "poll_interval_minutes": 60,
  "thresholds": {
   "max_price_per_bar": 2.5,
@@ -13,28 +13,28 @@
    "products": 12,
    "bar_variants": 21,
    "url": "https://www.supplementsource.ca/collections/clearance-protein-bars",
-   "last_ok": "2026-09-26T22:26:05+00:00"
+   "last_ok": "2026-09-26T22:46:31+00:00"
   },
   "Vita-Plus": {
    "ok": true,
    "products": 64,
    "bar_variants": 12,
    "url": "https://vita-plus.ca/collections/clearance",
-   "last_ok": "2026-09-26T22:26:05+00:00"
+   "last_ok": "2026-09-26T22:46:31+00:00"
   },
   "Chicks and Muscles": {
    "ok": true,
    "products": 46,
    "bar_variants": 69,
    "url": "https://chicksandmuscles.ca/collections/bars-snacks",
-   "last_ok": "2026-09-26T22:26:05+00:00"
+   "last_ok": "2026-09-26T22:46:31+00:00"
   },
   "Top Nutrition & Fitness": {
    "ok": true,
    "products": 84,
    "bar_variants": 165,
    "url": "https://topnutritionandfitness.com/collections/clearance",
-   "last_ok": "2026-09-26T22:26:05+00:00"
+   "last_ok": "2026-09-26T22:46:31+00:00"
   }
  },
  "items": [
@@ -57,7 +57,7 @@
    "days_left": -5,
    "qualifies": false,
    "reason": "expired",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -177,7 +177,7 @@
    "days_left": 42,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -201,7 +201,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -225,7 +225,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -249,7 +249,7 @@
    "days_left": 34,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -273,7 +273,7 @@
    "days_left": 35,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -321,7 +321,7 @@
    "days_left": 35,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -345,7 +345,7 @@
    "days_left": 35,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -369,7 +369,7 @@
    "days_left": 35,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -441,7 +441,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -465,7 +465,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -489,7 +489,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -513,7 +513,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -537,7 +537,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -561,7 +561,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -585,7 +585,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -609,7 +609,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -633,7 +633,7 @@
    "days_left": 50,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -657,7 +657,7 @@
    "days_left": 50,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -681,7 +681,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -705,7 +705,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -729,7 +729,7 @@
    "days_left": 4,
    "qualifies": false,
    "reason": "only 4d left",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -753,7 +753,7 @@
    "days_left": 65,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -777,7 +777,7 @@
    "days_left": 35,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -801,7 +801,7 @@
    "days_left": -361,
    "qualifies": false,
    "reason": "expired",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -825,7 +825,7 @@
    "days_left": -361,
    "qualifies": false,
    "reason": "expired",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -873,7 +873,7 @@
    "days_left": -149,
    "qualifies": false,
    "reason": "expired",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -921,7 +921,7 @@
    "days_left": -149,
    "qualifies": false,
    "reason": "expired",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -945,7 +945,7 @@
    "days_left": -149,
    "qualifies": false,
    "reason": "expired",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -969,7 +969,7 @@
    "days_left": -149,
    "qualifies": false,
    "reason": "expired",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -993,7 +993,7 @@
    "days_left": 96,
    "qualifies": true,
    "reason": "ok",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -1089,7 +1089,7 @@
    "days_left": -544,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -1113,7 +1113,7 @@
    "days_left": -544,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -1785,7 +1785,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -1809,7 +1809,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -1833,7 +1833,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -1881,7 +1881,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -1905,7 +1905,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -1929,7 +1929,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -1953,7 +1953,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2073,7 +2073,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.50/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2097,7 +2097,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.50/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2121,7 +2121,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.50/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2193,7 +2193,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.92/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2217,7 +2217,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.92/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2265,7 +2265,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.92/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2289,7 +2289,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.92/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2313,7 +2313,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.92/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2337,7 +2337,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.92/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2385,7 +2385,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.92/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2409,7 +2409,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.92/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2433,7 +2433,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.92/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2457,7 +2457,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2481,7 +2481,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2505,7 +2505,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2529,7 +2529,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2553,7 +2553,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.08/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2577,7 +2577,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.08/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2601,7 +2601,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.08/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2649,7 +2649,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.08/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2745,7 +2745,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2817,7 +2817,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2841,7 +2841,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2865,7 +2865,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2889,7 +2889,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2913,7 +2913,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2937,7 +2937,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2961,7 +2961,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -2985,7 +2985,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3009,7 +3009,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3033,7 +3033,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3057,7 +3057,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3081,7 +3081,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3105,7 +3105,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3129,7 +3129,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3153,7 +3153,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3177,7 +3177,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3225,7 +3225,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3249,7 +3249,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3273,7 +3273,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3297,7 +3297,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3321,7 +3321,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3345,7 +3345,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3369,7 +3369,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3393,7 +3393,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3417,7 +3417,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3441,7 +3441,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3465,7 +3465,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$3.58/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3513,7 +3513,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3537,7 +3537,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3561,7 +3561,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3585,7 +3585,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3633,7 +3633,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3657,7 +3657,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3681,7 +3681,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3705,7 +3705,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3729,7 +3729,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3753,7 +3753,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3777,7 +3777,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3825,7 +3825,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3849,7 +3849,7 @@
    "days_left": -361,
    "qualifies": false,
    "reason": "expired",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3873,7 +3873,7 @@
    "days_left": -361,
    "qualifies": false,
    "reason": "expired",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3969,7 +3969,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -3993,7 +3993,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4017,7 +4017,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4065,7 +4065,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4089,7 +4089,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4113,7 +4113,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4137,7 +4137,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4233,7 +4233,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4425,7 +4425,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4449,7 +4449,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4473,7 +4473,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4497,7 +4497,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4521,7 +4521,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4545,7 +4545,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4569,7 +4569,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4593,7 +4593,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4617,7 +4617,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4641,7 +4641,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4665,7 +4665,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4689,7 +4689,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4713,7 +4713,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4737,7 +4737,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4761,7 +4761,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4785,7 +4785,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4809,7 +4809,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4833,7 +4833,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4857,7 +4857,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4881,7 +4881,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4905,7 +4905,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4929,7 +4929,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4953,7 +4953,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -4977,7 +4977,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5001,7 +5001,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5025,7 +5025,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5049,7 +5049,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5241,7 +5241,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$8.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5265,7 +5265,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$8.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5577,7 +5577,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.17/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5601,7 +5601,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.17/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5625,7 +5625,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.17/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5673,7 +5673,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.17/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5697,7 +5697,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.17/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5721,7 +5721,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.17/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5745,7 +5745,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.17/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5769,7 +5769,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.83/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5793,7 +5793,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5817,7 +5817,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5841,7 +5841,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.83/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5865,7 +5865,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5889,7 +5889,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5913,7 +5913,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5937,7 +5937,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5961,7 +5961,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -5985,7 +5985,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6009,7 +6009,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6033,7 +6033,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6057,7 +6057,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6081,7 +6081,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6105,7 +6105,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.83/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6153,7 +6153,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6177,7 +6177,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6201,7 +6201,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6225,7 +6225,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6249,7 +6249,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6273,7 +6273,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6297,7 +6297,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6321,7 +6321,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6345,7 +6345,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6369,7 +6369,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6561,7 +6561,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.29/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6585,7 +6585,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.29/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6609,7 +6609,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.29/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6633,7 +6633,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.29/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6657,7 +6657,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.29/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6681,7 +6681,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6705,7 +6705,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6729,7 +6729,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6753,7 +6753,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6801,7 +6801,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6825,7 +6825,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6849,7 +6849,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6873,7 +6873,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6921,7 +6921,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -6993,7 +6993,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7017,7 +7017,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7185,7 +7185,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7209,7 +7209,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7233,7 +7233,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7281,7 +7281,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7329,7 +7329,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.42/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7449,7 +7449,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.62/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7473,7 +7473,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.62/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7521,7 +7521,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.37/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7545,7 +7545,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.62/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7569,7 +7569,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.35/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7593,7 +7593,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.35/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7617,7 +7617,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.35/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7641,7 +7641,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.35/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7665,7 +7665,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.35/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7689,7 +7689,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.35/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7761,7 +7761,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.35/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7785,7 +7785,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.35/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7809,7 +7809,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.35/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7833,7 +7833,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.35/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7881,7 +7881,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$4.35/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -7929,7 +7929,7 @@
    "days_left": -73,
    "qualifies": false,
    "reason": "$2.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8145,7 +8145,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.29/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8169,7 +8169,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.29/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8193,7 +8193,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.29/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8217,7 +8217,7 @@
    "days_left": -26,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8241,7 +8241,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.29/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8265,7 +8265,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.29/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8289,7 +8289,7 @@
    "days_left": -43,
    "qualifies": false,
    "reason": "$3.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8337,7 +8337,7 @@
    "days_left": -20,
    "qualifies": false,
    "reason": "$3.48/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8361,7 +8361,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8385,7 +8385,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.25/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8409,7 +8409,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.25/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8433,7 +8433,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.25/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8457,7 +8457,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8481,7 +8481,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.25/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8505,7 +8505,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8529,7 +8529,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8553,7 +8553,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8577,7 +8577,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8601,7 +8601,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8625,7 +8625,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.25/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8649,7 +8649,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8673,7 +8673,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8697,7 +8697,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8721,7 +8721,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.25/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8745,7 +8745,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8769,7 +8769,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8793,7 +8793,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8817,7 +8817,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8841,7 +8841,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -8865,7 +8865,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9177,7 +9177,7 @@
    "days_left": -43,
    "qualifies": false,
    "reason": "$3.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9201,7 +9201,7 @@
    "days_left": -20,
    "qualifies": false,
    "reason": "$3.33/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9225,7 +9225,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9249,7 +9249,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9273,7 +9273,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9297,7 +9297,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9321,7 +9321,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9345,7 +9345,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9369,7 +9369,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9393,7 +9393,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9417,7 +9417,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9441,7 +9441,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9465,7 +9465,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9489,7 +9489,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9513,7 +9513,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9537,7 +9537,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9561,7 +9561,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9585,7 +9585,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.75/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9609,7 +9609,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9633,7 +9633,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9657,7 +9657,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9681,7 +9681,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -9705,7 +9705,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$5.00/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -10041,7 +10041,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -10065,7 +10065,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -10089,7 +10089,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -10113,7 +10113,7 @@
    "days_left": -64,
    "qualifies": false,
    "reason": "$4.99/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -10209,7 +10209,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
@@ -10257,7 +10257,7 @@
    "days_left": null,
    "qualifies": false,
    "reason": "$6.49/bar > $2.50",
-   "first_seen": null,
+   "first_seen": "2026-09-26T22:46:31+00:00",
    "prev_price": null,
    "price_changed_at": null,
    "stale": false
