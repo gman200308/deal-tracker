@@ -1,0 +1,150 @@
+# Protein Bar Deal Tracker
+
+Watches clearance/bar collections on Canadian Shopify supplement stores and pushes an
+[ntfy.sh](https://ntfy.sh) notification when a short-dated protein bar is a real deal.
+
+| Store | Collection endpoint |
+|---|---|
+| SupplementSource | `https://www.supplementsource.ca/collections/clearance-protein-bars/products.json` |
+| Vita-Plus | `https://vita-plus.ca/collections/clearance/products.json` |
+| Chicks and Muscles | `https://chicksandmuscles.ca/collections/bars-snacks/products.json` |
+| Top Nutrition & Fitness | `https://topnutritionandfitness.com/collections/clearance/products.json` |
+
+## How it works
+
+For every store, the tracker pages through `products.json?limit=250&page=N` until it gets an
+empty page. Then, for each product:
+
+1. **Bar/snack filter**: the product title must contain an `include` keyword (bar, cookie,
+   pastry, snack…) and no `exclude` keyword (drink, sauce, powder, spices…).
+2. **Per variant** (each flavour/size is its own listing, often with its own date):
+   - Out-of-stock variants are skipped.
+   - **Bar count** comes from the variant title, then the product title: `12 Bars/Box`,
+     `60g x 12`, `Box of 12`, `(1 bar)`, `SINGLE BAR`, `6 Pastry`, `21 cookies`, `12-pack`…
+     If no count is stated, it assumes 1, so the price per bar is never understated.
+   - **Best-before date** comes from the variant title, then the product title, then the
+     description (description only when a keyword like "Best Before" introduces the date).
+   - **Discount %** = `(compare_at_price − price) / compare_at_price`.
+   - **Price per bar** = `price / count`.
+3. **Alert** when the variant is **new** or its **price dropped**, *and* it costs
+   ≤ `max_price_per_bar` per bar, *and* it has at least `min_days_before_best_before` days left.
+   Variants from the same product are grouped into one notification. The notification links
+   to the exact variant.
+
+### Supported date formats
+
+Month-only dates resolve to the **last day of that month**.
+
+| Example | Parsed as |
+|---|---|
+| `30-Nov-26`, `30 November 2026`, `07.Nov.26` | 2026-11-30 / 2026-11-07 |
+| `Best Before 09/2026`, `BB 05/2026`, `Use by 11.2026` | end of that month |
+| `Best Before 09/25`, `EXP 11-26` | end of that month (2-digit year only after a keyword) |
+| `Best Before End of 11/2026` | 2026-11-30 |
+| `BB April 2, 2026`, `Dec 15 2026`, `Expiry Date: November 30th, 2026` | exact day |
+| `BB 03/31/26`, `B.B. 31/12/26`, `BB 15.11.2026` | exact day. If both numbers are ≤ 12, `numeric_order` decides |
+| `Exp. Nov 2026`, `Best by Sept '26`, `Good until Jan-27` | end of that month |
+| `2026-11-15`, `BBD: 2026/11` | exact day / end of month |
+
+Recognized keywords include Best Before, Best Beore (a real typo on one store), Best By,
+BB, BBD, B.B., Exp, Expiry, Expires, Expiration Date, Use By, Good Until, and Dated.
+Unparseable dates such as `05/206` fall back to the product title's date.
+
+## Configuration
+
+All thresholds are in [`config.toml`](config.toml):
+
+| Key | Default | Meaning |
+|---|---|---|
+| `thresholds.max_price_per_bar` | `2.50` | CAD per bar, inclusive |
+| `thresholds.min_days_before_best_before` | `7` | days that must remain |
+| `thresholds.min_price_drop` | `0.01` | smallest drop that counts as a price drop |
+| `thresholds.allow_missing_best_before` | `true` | alert on cheap bars that list no date |
+| `polling.min_interval_minutes` | `60` | refuses to poll more often (`--force` overrides) |
+| `alerts.max_notifications_per_run` | `8` | extra deals get bundled into one summary |
+| `dates.numeric_order` | `MDY` | how to read ambiguous `03/04/26` |
+
+To add a store, append another `[[stores]]` block with `name`, `base_url`, and `collection`.
+
+The ntfy topic is **not** in the config. It is read from the `NTFY_TOPIC` environment variable.
+Anyone who knows the topic name can read it, so pick something unguessable. Optional variables:
+`NTFY_SERVER` (for a self-hosted server) and `NTFY_TOKEN` (for protected topics).
+
+## Running locally
+
+Requires Python 3.11+.
+
+```bash
+pip install -r requirements.txt
+python deal_tracker.py --dry-run          # fetch + print full table and would-be alerts; writes nothing
+NTFY_TOPIC=your-secret-topic python deal_tracker.py      # real run: alerts + updates state
+python deal_tracker.py --force -v         # ignore the 60-min guard, print the table too
+```
+
+Tests: `pip install -r requirements-dev.txt && python -m pytest`
+
+## State and repeat alerts
+
+`state/seen.json` records every in-stock bar variant it has seen, with its last price,
+per-bar price, best-before date, and first/last-seen timestamps. It also records the time
+of the last poll. The file is committed back to the repo after each run, so you only get
+alerted when something is new or cheaper.
+
+- If a notification fails to send, that item's price is **not** recorded, so the alert is retried next run.
+- Items not seen for `forget_after_days` (30) are dropped and count as new if they come back.
+- Delete `state/seen.json` to start over.
+
+## Dashboard (GitHub Pages)
+
+`docs/index.html` is a static page that shows every tracked bar and snack, grouped by product
+with one row per flavour. It reads `docs/deals.json`, which the tracker rewrites on every run
+and the workflow deploys to Pages right after each poll.
+
+- **Views:**
+  - **Deals**: items that pass your thresholds.
+  - **All in stock**: every in-stock item.
+  - **Everything**: also shows out-of-stock flavours, struck through.
+- Search, store filter, and sorting by price per bar, soonest best-before, biggest discount, or newest.
+- **Badges:** NEW (first seen within 48 hours), PRICE DROP with the old price (within 7 days),
+  and a best-before chip: red means under the minimum, amber means under 30 days, grey means
+  the listing has no date.
+- **Store chips** show each store's status. If a store fails on a run, its previous rows stay
+  on the page marked STALE rather than disappearing.
+- **Refreshing:** an open tab re-checks for new data every 5 minutes and whenever you switch
+  back to it. Light and dark mode follow your system, and the ◐ button overrides it.
+
+Preview locally:
+
+```bash
+python deal_tracker.py --snapshot-only --force
+python -m http.server 8765 --directory docs
+```
+
+Then open http://localhost:8765. `--snapshot-only` only rewrites `deals.json`. It doesn't send
+alerts or touch the state file.
+
+## Error handling
+
+- Each store is fetched in its own `try` block, so one broken store is logged and the rest continue.
+- Requests retry with backoff on 429 and 5xx, respecting `Retry-After`.
+- There's a pause between requests, and the User-Agent is a normal browser one.
+- Exit code 1 if every store failed. Exit code 2 if a notification failed. The workflow run shows red in either case.
+
+## GitHub Actions setup
+
+1. Push this folder to a **public** GitHub repo. GitHub Pages is only free for public repos.
+   Nothing secret is committed: the ntfy topic lives in a repo secret.
+2. **Settings → Secrets and variables → Actions → New repository secret**: `NTFY_TOPIC` = your topic.
+3. **Settings → Actions → General → Workflow permissions** → *Read and write permissions*,
+   so the workflow can commit `state/seen.json` and `docs/deals.json`.
+4. **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+5. Subscribe to the topic in the ntfy app (iOS/Android) or at `https://ntfy.sh/<topic>`.
+6. Trigger it once from **Actions → Deal tracker → Run workflow**. The dashboard will be at
+   `https://<your-username>.github.io/<repo-name>/`.
+
+The workflow in [`.github/workflows/deal-tracker.yml`](.github/workflows/deal-tracker.yml) runs
+hourly at :17. GitHub's scheduler can start runs late, and the tracker also enforces the
+60-minute minimum itself. So an occasional scheduled run will skip, which means a two-hour gap
+now and then. If you'd rather never skip, lower `min_interval_minutes` to about 50.
+The hourly state commits also keep the repo active, so GitHub won't auto-disable the schedule
+after 60 days without activity.

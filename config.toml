@@ -1,0 +1,71 @@
+# Deal tracker configuration. The ntfy topic is NOT stored here -- set the
+# NTFY_TOPIC environment variable (a GitHub Actions secret in CI).
+
+[thresholds]
+max_price_per_bar = 2.50        # CAD; alert only at or below this per-bar price
+min_days_before_best_before = 7 # need at least this many days left before the BB date
+min_price_drop = 0.01           # CAD; a "price drop" must be at least this much
+allow_missing_best_before = true # alert on items whose listing shows no BB date at all
+assume_count_if_unknown = 1     # bar count used when the title doesn't state one
+                                # (1 = conservative: price/bar is never understated)
+
+[polling]
+min_interval_minutes = 60       # refuse to poll more often than this (use --force to override)
+request_timeout_seconds = 20
+delay_between_requests_seconds = 1.5
+max_pages = 20                  # safety cap on ?page= pagination per store
+page_size = 250                 # Shopify's max for products.json
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+[alerts]
+max_notifications_per_run = 8   # beyond this, remaining deals are bundled into one summary
+priority = 4                    # ntfy priority 1-5
+ntfy_server = "https://ntfy.sh" # override with NTFY_SERVER env var if self-hosting
+
+[dates]
+timezone = "America/Toronto"
+# For all-numeric dates like 03/04/26 where both parts are <= 12. "MDY" or "DMY".
+numeric_order = "MDY"
+
+[state]
+path = "state/seen.json"
+forget_after_days = 30          # drop items not seen for this long (they count as new again)
+
+[site]
+snapshot_path = "docs/deals.json"   # data file for the GitHub Pages dashboard
+
+[filter]
+# Product title must contain one of these words (whole-word, case-insensitive)...
+include = ["bar", "bars", "snack", "snacks", "cookie", "cookies", "wafer", "wafers",
+           "pastry", "pastries", "brownie", "brownies", "bites", "puff", "puffs",
+           "crisps", "chips", "protein balls", "jerky",
+           "waffle", "waffles", "tart", "tarts", "pop-tart", "pop-tarts", "donut", "donuts",
+           "muffin", "muffins", "pretzels", "popcorn", "crackers", "granola", "pork rinds",
+           "nachos", "tortilla"]
+# ...and none of these.
+exclude = ["drink", "drinks", "can", "cans", "sauce", "sauces", "syrup", "dressing",
+           "mayo", "mayonnaise", "ketchup", "mustard", "jam", "spray", "spice", "spices",
+           "seasoning", "powder", "whey", "isolate", "pre-workout", "creatine",
+           "capsules", "caps", "shake", "rtd", "gym bag", "belt", "band", "bands",
+           "electrolyte", "greens"]
+
+# --- Stores (Shopify collection handles) -------------------------------------
+[[stores]]
+name = "SupplementSource"
+base_url = "https://www.supplementsource.ca"
+collection = "clearance-protein-bars"
+
+[[stores]]
+name = "Vita-Plus"
+base_url = "https://vita-plus.ca"
+collection = "clearance"
+
+[[stores]]
+name = "Chicks and Muscles"
+base_url = "https://chicksandmuscles.ca"
+collection = "bars-snacks"
+
+[[stores]]
+name = "Top Nutrition & Fitness"
+base_url = "https://topnutritionandfitness.com"
+collection = "clearance"

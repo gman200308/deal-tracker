@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bar Deal Tracker</title>
+<meta name="description" content="Short-dated protein bar and snack clearance deals from Canadian stores, refreshed hourly.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍫</text></svg>">
+<style>
+:root {
+  --bg: #f6f4ef; --surface: #ffffff; --surface-2: #f0ede6; --border: #e3ded3;
+  --text: #1d1b16; --muted: #6b665c; --accent: #b4461b; --accent-soft: #fbe9df;
+  --good: #1f7a4d; --good-soft: #e1f3e8; --warn: #9a6400; --warn-soft: #fbf0d6;
+  --bad: #b3261e; --bad-soft: #fbe3e1; --none-soft: #ecebe7;
+  --shadow: 0 1px 2px rgba(30,25,15,.06), 0 4px 16px rgba(30,25,15,.05);
+  --radius: 14px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14130f; --surface: #1d1c18; --surface-2: #26241f; --border: #34312a;
+    --text: #f2efe8; --muted: #a39d90; --accent: #f08a5d; --accent-soft: #3a2419;
+    --good: #5fd49a; --good-soft: #17352a; --warn: #f0c060; --warn-soft: #3a3016;
+    --bad: #ff8a80; --bad-soft: #3d1c1a; --none-soft: #2c2a25;
+    --shadow: 0 1px 2px rgba(0,0,0,.3); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14130f; --surface: #1d1c18; --surface-2: #26241f; --border: #34312a;
+  --text: #f2efe8; --muted: #a39d90; --accent: #f08a5d; --accent-soft: #3a2419;
+  --good: #5fd49a; --good-soft: #17352a; --warn: #f0c060; --warn-soft: #3a3016;
+  --bad: #ff8a80; --bad-soft: #3d1c1a; --none-soft: #2c2a25;
+  --shadow: 0 1px 2px rgba(0,0,0,.3); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg); color: var(--text);
+  font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.num { font-variant-numeric: tabular-nums; }
+a { color: inherit; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 24px 16px 64px; }
+
+header { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-end; justify-content: space-between; margin-bottom: 18px; }
+h1 { font-size: clamp(24px, 4vw, 32px); line-height: 1.1; margin: 0; letter-spacing: -.02em; }
+h1 span { color: var(--accent); }
+.sub { color: var(--muted); margin-top: 6px; font-size: 14px; }
+.updated { text-align: right; font-size: 13px; color: var(--muted); }
+.updated strong { color: var(--text); font-weight: 600; }
+.pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--good); margin-right: 6px; vertical-align: 1px; }
+.pulse.stale { background: var(--warn); }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 14px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; box-shadow: var(--shadow); }
+.stat .k { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.stat .v { font-size: 24px; font-weight: 700; margin-top: 2px; letter-spacing: -.01em; }
+
+.stores { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); text-decoration: none; white-space: nowrap; }
+.chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--good); }
+.chip.fail .dot { background: var(--bad); }
+.chip.fail { border-color: var(--bad); }
+
+.controls { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); padding: 10px 0; margin-bottom: 8px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.seg { display: inline-flex; background: var(--surface-2); border-radius: 10px; padding: 3px; }
+.seg button { border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 13.5px; padding: 6px 12px; border-radius: 8px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: var(--shadow); font-weight: 600; }
+input[type=search], select {
+  font: inherit; font-size: 14px; color: var(--text); background: var(--surface);
+  border: 1px solid var(--border); border-radius: 10px; padding: 7px 10px; min-height: 36px;
+}
+input[type=search] { flex: 1 1 200px; min-width: 0; }
+select { flex: 0 1 auto; max-width: 100%; }
+.count { font-size: 13px; color: var(--muted); margin: 4px 0 12px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px; align-items: start; }
+@media (max-width: 420px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; }
+.card.hit { border-color: color-mix(in srgb, var(--good) 45%, var(--border)); }
+.card.stale { opacity: .7; }
+.top { display: flex; gap: 12px; padding: 12px 14px 10px; align-items: flex-start; }
+.thumb { width: 64px; height: 64px; border-radius: 10px; flex: none; background: #fff center/contain no-repeat; border: 1px solid var(--border); }
+.meta { min-width: 0; flex: 1; }
+.store { font-size: 12px; color: var(--muted); display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.title { font-weight: 600; margin: 2px 0 0; font-size: 14.5px; line-height: 1.3; text-decoration: none; display: block; overflow-wrap: anywhere; }
+.title:hover { color: var(--accent); }
+.price { text-align: right; flex: none; }
+.price .pb { font-size: 22px; font-weight: 800; letter-spacing: -.02em; line-height: 1; }
+.price .pb.ok { color: var(--good); }
+.price .unit { font-size: 11px; color: var(--muted); }
+
+.tag { font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 999px; letter-spacing: .02em; }
+.tag.new { background: var(--accent-soft); color: var(--accent); }
+.tag.drop { background: var(--good-soft); color: var(--good); }
+.tag.stale { background: var(--warn-soft); color: var(--warn); }
+
+.flavors { list-style: none; margin: 0; padding: 0 6px 6px; border-top: 1px solid var(--border); }
+.flavors li { display: grid; grid-template-columns: minmax(0,1fr) auto auto; gap: 4px 10px; align-items: center; padding: 7px 8px; border-radius: 8px; font-size: 13px; }
+.flavors li + li { border-top: 1px dashed var(--border); border-radius: 0; }
+.flavors li.oos { color: var(--muted); }
+.flavors li.oos .fl { text-decoration: line-through; }
+.fl { min-width: 0; overflow-wrap: anywhere; }
+.fl a { text-decoration: none; }
+.fl a:hover { text-decoration: underline; }
+.fl .why { display: block; font-size: 11.5px; color: var(--muted); }
+.pp { text-align: right; white-space: nowrap; }
+.pp small { color: var(--muted); display: block; font-size: 11px; }
+.pp s { color: var(--muted); }
+.bb { font-size: 11.5px; font-weight: 600; padding: 3px 8px; border-radius: 999px; white-space: nowrap; text-align: center; min-width: 74px; }
+.bb.good { background: var(--good-soft); color: var(--good); }
+.bb.warn { background: var(--warn-soft); color: var(--warn); }
+.bb.bad { background: var(--bad-soft); color: var(--bad); }
+.bb.none { background: var(--none-soft); color: var(--muted); font-weight: 500; }
+.more { border: 0; background: none; color: var(--accent); font: inherit; font-size: 12.5px; cursor: pointer; padding: 6px 14px 10px; text-align: left; }
+
+.empty, .err { text-align: center; padding: 48px 16px; color: var(--muted); background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius); }
+.err { color: var(--bad); }
+footer { margin-top: 32px; font-size: 12.5px; color: var(--muted); text-align: center; }
+.theme { border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 10px; min-height: 36px; padding: 0 10px; cursor: pointer; font: inherit; font-size: 14px; }
+@media (max-width: 600px) {
+  header { align-items: flex-start; }
+  .updated { text-align: left; }
+  .controls { position: static; }
+  .seg { width: 100%; } .seg button { flex: 1; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Short-dated <span>bar deals</span></h1>
+      <div class="sub" id="rules">Loading…</div>
+    </div>
+    <div class="updated" id="updated"></div>
+  </header>
+
+  <section class="stats" id="stats" aria-label="Summary"></section>
+  <nav class="stores" id="stores" aria-label="Stores"></nav>
+
+  <div class="controls" role="search">
+    <div class="seg" role="group" aria-label="Show">
+      <button data-view="deals" aria-pressed="true">Deals</button>
+      <button data-view="stock" aria-pressed="false">All in stock</button>
+      <button data-view="all" aria-pressed="false">Everything</button>
+    </div>
+    <input type="search" id="q" placeholder="Search brand or flavour…" aria-label="Search">
+    <select id="store" aria-label="Store"><option value="">All stores</option></select>
+    <select id="sort" aria-label="Sort">
+      <option value="per_bar">Cheapest per bar</option>
+      <option value="days">Soonest best-before</option>
+      <option value="discount">Biggest discount</option>
+      <option value="new">Newest</option>
+    </select>
+    <button class="theme" id="theme" title="Toggle theme" aria-label="Toggle theme">◐</button>
+  </div>
+  <div class="count" id="count"></div>
+  <main class="grid" id="grid"></main>
+  <footer>Data refreshes hourly from each store's public product feed. Prices in CAD; always check the store before buying.</footer>
+</div>
+
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem('bdt:' + k); return v === null ? d : v; } catch { return d; } },
+    set(k, v) { try { localStorage.setItem('bdt:' + k, v); } catch {} },
+  };
+  const state = { data: null, view: store.get('view', 'deals'), q: '', store: store.get('store', ''), sort: store.get('sort', 'per_bar'), open: new Set() };
+  const money = (n) => '$' + Number(n).toFixed(2);
+  const el = (tag, attrs = {}, ...kids) => {
+    const e = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (v == null || v === false) continue;
+      if (k === 'class') e.className = v; else if (k === 'style') e.style.cssText = v; else e.setAttribute(k, v);
+    }
+    for (const c of kids.flat()) if (c != null && c !== false) e.append(c.nodeType ? c : String(c));
+    return e;
+  };
+  const ago = (iso) => {
+    const m = Math.round((Date.now() - new Date(iso)) / 60000);
+    if (m < 1) return 'just now';
+    if (m < 60) return m + ' min ago';
+    const h = Math.floor(m / 60); return h + ' h ' + (m % 60) + ' min ago';
+  };
+  const DAY = 864e5;
+
+  // Theme toggle (remembered per browser).
+  const applyTheme = (t) => { if (t) document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme; };
+  applyTheme(store.get('theme', ''));
+  $('#theme').onclick = () => {
+    const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+    const cur = document.documentElement.dataset.theme || (dark ? 'dark' : 'light');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    applyTheme(next); store.set('theme', next);
+  };
+
+  function isNew(r) {
+    const d = state.data;
+    if (!r.first_seen || !d.tracking_since) return false;
+    const fs = new Date(r.first_seen);
+    return fs - new Date(d.tracking_since) > 36e5 && Date.now() - fs < 2 * DAY;
+  }
+  function dropped(r) {
+    return r.prev_price != null && r.price < r.prev_price && r.price_changed_at && Date.now() - new Date(r.price_changed_at) < 7 * DAY;
+  }
+  function bbChip(r) {
+    const th = state.data.thresholds.min_days_before_best_before;
+    if (r.days_left == null) return el('span', { class: 'bb none', title: 'No best-before date in the listing' }, 'No date');
+    const cls = r.days_left < th ? 'bad' : r.days_left < 30 ? 'warn' : 'good';
+    const label = r.days_left < 0 ? 'Expired' : r.days_left + 'd left';
+    return el('span', { class: 'bb ' + cls, title: 'Best before ' + r.best_before + ' (from ' + r.date_source + ')' }, label);
+  }
+
+  function visibleRows() {
+    const q = state.q.trim().toLowerCase();
+    return state.data.items.filter((r) => {
+      if (state.view === 'deals' && !r.qualifies) return false;
+      if (state.view === 'stock' && !r.in_stock) return false;
+      if (state.store && r.store !== state.store) return false;
+      if (q && !(r.product + ' ' + r.flavor + ' ' + r.store).toLowerCase().includes(q)) return false;
+      return true;
+    });
+  }
+
+  function groups(rows) {
+    const m = new Map();
+    for (const r of rows) {
+      const k = r.store + '|' + r.product;
+      if (!m.has(k)) m.set(k, { key: k, store: r.store, product: r.product, image: r.image, rows: [] });
+      m.get(k).rows.push(r);
+    }
+    const out = [...m.values()];
+    for (const g of out) {
+      g.rows.sort((a, b) => (b.in_stock - a.in_stock) || (b.qualifies - a.qualifies) || a.per_bar - b.per_bar);
+      const live = g.rows.filter((r) => r.in_stock);
+      const pool = live.length ? live : g.rows;
+      g.best = Math.min(...pool.map((r) => r.per_bar));
+      g.minDays = Math.min(...pool.map((r) => r.days_left ?? 9999));
+      g.maxDisc = Math.max(...pool.map((r) => r.discount_pct));
+      g.newest = Math.max(...g.rows.map((r) => r.first_seen ? +new Date(r.first_seen) : 0));
+      g.hit = g.rows.some((r) => r.qualifies);
+      g.stale = g.rows.every((r) => r.stale);
+      g.isNew = g.rows.some(isNew); g.drop = g.rows.some(dropped);
+    }
+    const by = {
+      per_bar: (a, b) => a.best - b.best,
+      days: (a, b) => a.minDays - b.minDays,
+      discount: (a, b) => b.maxDisc - a.maxDisc,
+      new: (a, b) => b.newest - a.newest || a.best - b.best,
+    }[state.sort];
+    return out.sort((a, b) => (b.hit - a.hit) || by(a, b));
+  }
+
+  function flavorRow(r) {
+    const th = state.data.thresholds.max_price_per_bar;
+    const name = r.flavor || 'Standard';
+    const why = !r.qualifies ? r.reason : null;
+    return el('li', { class: r.in_stock ? '' : 'oos' },
+      el('span', { class: 'fl' },
+        el('a', { href: r.url, target: '_blank', rel: 'noopener' }, name),
+        isNew(r) ? [' ', el('span', { class: 'tag new' }, 'NEW')] : null,
+        dropped(r) ? [' ', el('span', { class: 'tag drop' }, '↓ ' + money(r.prev_price))] : null,
+        why ? el('span', { class: 'why' }, why) : null),
+      el('span', { class: 'pp num' },
+        el('strong', { style: r.per_bar <= th && r.in_stock ? 'color:var(--good)' : '' }, money(r.per_bar)), '/bar',
+        el('small', {}, money(r.price) + ' for ' + r.count + (r.count_known ? '' : '?'),
+          r.compare_at && r.compare_at > r.price ? [' · ', el('s', {}, money(r.compare_at))] : null)),
+      bbChip(r));
+  }
+
+  function card(g) {
+    const th = state.data.thresholds.max_price_per_bar;
+    const LIMIT = 4;
+    const open = state.open.has(g.key);
+    const shown = open ? g.rows : g.rows.slice(0, LIMIT);
+    const c = el('article', { class: 'card' + (g.hit ? ' hit' : '') + (g.stale ? ' stale' : '') },
+      el('div', { class: 'top' },
+        el('div', { class: 'thumb', style: g.image ? `background-image:url("${encodeURI(g.image)}")` : '', role: 'img', 'aria-label': g.product }),
+        el('div', { class: 'meta' },
+          el('div', { class: 'store' }, g.store,
+            g.isNew ? el('span', { class: 'tag new' }, 'NEW') : null,
+            g.drop ? el('span', { class: 'tag drop' }, 'PRICE DROP') : null,
+            g.stale ? el('span', { class: 'tag stale', title: 'Store failed on the last check; showing earlier data' }, 'STALE') : null,
+            g.maxDisc > 0 ? el('span', { class: 'tag', style: 'background:var(--surface-2)' }, '−' + Math.round(g.maxDisc) + '%') : null),
+          el('a', { class: 'title', href: g.rows[0].url, target: '_blank', rel: 'noopener' }, g.product)),
+        el('div', { class: 'price' },
+          el('div', { class: 'pb num' + (g.best <= th ? ' ok' : '') }, money(g.best)),
+          el('div', { class: 'unit' }, 'per bar'))),
+      el('ul', { class: 'flavors' }, shown.map(flavorRow)));
+    if (g.rows.length > LIMIT) {
+      const b = el('button', { class: 'more' }, open ? 'Show fewer' : `Show all ${g.rows.length} flavours`);
+      b.onclick = () => { open ? state.open.delete(g.key) : state.open.add(g.key); render(); };
+      c.append(b);
+    }
+    return c;
+  }
+
+  function renderHeader() {
+    const d = state.data, th = d.thresholds;
+    $('#rules').textContent = `≤ ${money(th.max_price_per_bar)}/bar · at least ${th.min_days_before_best_before} days before best-before · in stock`;
+    const age = Date.now() - new Date(d.generated_at);
+    const stale = age > (d.poll_interval_minutes * 2.5) * 6e4;
+    $('#updated').replaceChildren(
+      el('div', {}, el('span', { class: 'pulse' + (stale ? ' stale' : '') }), 'Updated ', el('strong', {}, ago(d.generated_at))),
+      el('div', {}, new Date(d.generated_at).toLocaleString([], { dateStyle: 'medium', timeStyle: 'short' }) + ' · checks hourly'));
+
+    const live = d.items.filter((r) => r.in_stock);
+    const deals = d.items.filter((r) => r.qualifies);
+    const best = deals.length ? Math.min(...deals.map((r) => r.per_bar)) : null;
+    const okStores = Object.values(d.stores).filter((s) => s.ok).length;
+    const tile = (k, v) => el('div', { class: 'stat' }, el('div', { class: 'k' }, k), el('div', { class: 'v num' }, v));
+    $('#stats').replaceChildren(
+      tile('Deals right now', deals.length),
+      tile('Best price / bar', best == null ? '—' : money(best)),
+      tile('In-stock items', live.length),
+      tile('Stores OK', okStores + ' / ' + Object.keys(d.stores).length));
+
+    $('#stores').replaceChildren(...Object.entries(d.stores).map(([name, s]) => {
+      const n = d.items.filter((r) => r.store === name && r.qualifies).length;
+      return el('a', { class: 'chip' + (s.ok ? '' : ' fail'), href: s.url, target: '_blank', rel: 'noopener',
+        title: s.ok ? `${s.bar_variants} in-stock bar/snack variants` : `Failed: ${s.error}` + (s.last_ok ? ` (last OK ${ago(s.last_ok)})` : '') },
+        el('span', { class: 'dot' }), name, el('span', { style: 'color:var(--muted)' }, n ? `${n} deal${n > 1 ? 's' : ''}` : ''));
+    }));
+
+    const sel = $('#store'), names = Object.keys(d.stores);
+    if (sel.options.length !== names.length + 1) {
+      sel.replaceChildren(el('option', { value: '' }, 'All stores'), ...names.map((n) => el('option', { value: n }, n)));
+    }
+    sel.value = names.includes(state.store) ? state.store : '';
+  }
+
+  function render() {
+    if (!state.data) return;
+    renderHeader();
+    document.querySelectorAll('.seg button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.view === state.view)));
+    $('#sort').value = state.sort;
+    const rows = visibleRows(), gs = groups(rows);
+    $('#count').textContent = `${gs.length} product${gs.length === 1 ? '' : 's'} · ${rows.length} flavour${rows.length === 1 ? '' : 's'}`;
+    if (!gs.length) {
+      const msg = state.view === 'deals' && !state.q && !state.store
+        ? 'No deals match your thresholds right now. Check “All in stock” to see everything being tracked.'
+        : 'Nothing matches these filters.';
+      $('#grid').replaceChildren(el('div', { class: 'empty', style: 'grid-column:1/-1' }, msg));
+      return;
+    }
+    $('#grid').replaceChildren(...gs.map(card));
+  }
+
+  async function load() {
+    try {
+      const r = await fetch('deals.json?t=' + Date.now(), { cache: 'no-store' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const d = await r.json();
+      if (!state.data || d.generated_at !== state.data.generated_at) { state.data = d; render(); }
+    } catch (e) {
+      if (!state.data) $('#grid').replaceChildren(el('div', { class: 'err', style: 'grid-column:1/-1' }, "Couldn't load deals.json (" + e.message + ').'));
+    }
+  }
+
+  document.querySelectorAll('.seg button').forEach((b) => b.onclick = () => { state.view = b.dataset.view; store.set('view', state.view); render(); });
+  let t; $('#q').oninput = (e) => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value; render(); }, 120); };
+  $('#store').onchange = (e) => { state.store = e.target.value; store.set('store', state.store); render(); };
+  $('#sort').onchange = (e) => { state.sort = e.target.value; store.set('sort', state.sort); render(); };
+
+  load();
+  setInterval(load, 5 * 60e3);                       // pick up new hourly data while the tab is open
+  setInterval(() => state.data && renderHeader(), 30e3); // keep "updated X min ago" ticking
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) load(); });
+})();
+</script>
+</body>
+</html>
