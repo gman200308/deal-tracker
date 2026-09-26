@@ -3,12 +3,7 @@ name: Deal tracker
 on:
   schedule:
     - cron: "17 * * * *"   # hourly, off the top of the hour (GitHub may delay runs)
-  workflow_dispatch:
-    inputs:
-      force:
-        description: "Ignore the 60-minute minimum poll interval"
-        type: boolean
-        default: false
+  workflow_dispatch:   # manual "Run workflow" always polls (skips the 60-minute guard)
 
 permissions:
   contents: write   # commit state/seen.json back
@@ -46,7 +41,7 @@ jobs:
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}   # optional, only for protected topics
-        run: python deal_tracker.py ${{ inputs.force && '--force' || '' }}
+        run: python deal_tracker.py ${{ github.event_name == 'workflow_dispatch' && '--force' || '' }}
 
       - name: Commit state
         if: always() && hashFiles('state/seen.json') != ''
