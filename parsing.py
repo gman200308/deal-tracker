@@ -131,11 +131,18 @@ def parse_best_before(text: str, numeric_order: str = "MDY", keyword_only: bool 
 # --- Bar counts --------------------------------------------------------------
 
 _UNIT = (r"(?:bars?|cookies?|pastr(?:y|ies)|wafers?|brownies?|bites?|puffs?|"
-         r"snacks?|pieces?|pcs|count|ct|packs?|pk|bags?|pouch(?:es)?|waffles?|tarts?)")
+         r"snacks?|pieces?|pcs|count|ct|packs?|pk|bags?|pouch(?:es)?|waffles?|tarts?|"
+         r"cups?|sticks?|squares?|rolls?|whoopies?|truffles?|muffins?|donuts?|cakes?|"
+         r"packets?|packages?|sachets?|eggs?|chocolates?|candies|gumm(?:y|ies))")
+# "of N" must not be servings/weight: "1 bag of 4 servings" is 1 bag, not 4.
+_OF_N = r"of\s+(\d{1,3})(?![\d.])(?!\s*(?:servings?|g|oz|ml|lbs?)\b)"
 _COUNT_PATTERNS = [
-    re.compile(r"\b(?:box|pack|case|carton|bundle|packs)\s+of\s+(\d{1,3})\b", re.I),   # box of 12
+    re.compile(r"\b(\d{1,3})\s*(?:packs|boxes|bags|pouches|packages)\s+of\b", re.I),  # 12 packs of 2 -> 12
+    re.compile(rf"\b(?:box|pack|case|carton|bundle|packs|tin)\s+{_OF_N}", re.I),       # box of 12
+    re.compile(r"\b(\d{1,3})\s*/\s*(?:box|bars?|packs?|bags?)\b", re.I),               # 12/box, 18/bars
     re.compile(r"\b\d+(?:\.\d+)?\s*g\s*[x×]\s*(\d{1,3})\b", re.I),                    # 60g x 12
-    re.compile(r"\b(\d{1,3})\s*[x×]\s*\d+(?:\.\d+)?\s*g\b", re.I),                    # 12 x 60g
+    re.compile(r"\b(\d{1,3})\s*[x×]\s*\d+(?:\.\d+)?\s*(?:g|oz|ml)\b", re.I),           # 12 x 60g
+    re.compile(r"\b(\d{1,3})\s*[x×]\s*\d{1,2}\s*-?\s*(?:cup|piece|pack)", re.I),      # 1 x 2-cup package
     re.compile(rf"\b(\d{{1,3}})\s*[-\s]?\s*(?:random\s+|mini\s+|protein\s+|snack\s+)*{_UNIT}\b", re.I),  # 12 Bars
 ]
 _SINGLE_RE = re.compile(r"\bsingle\b", re.I)
@@ -164,3 +171,20 @@ def _any_word(words: list[str], text: str) -> bool:
 
 def is_bar_or_snack(title: str, include: list[str], exclude: list[str]) -> bool:
     return _any_word(include, title) and not _any_word(exclude, title)
+
+
+# "60 Gummies", "120 chews": snack gummies come in bags/boxes, supplements in bottles of 30+.
+_SUPPLEMENT_RE = re.compile(r"\b(?:[3-9]\d|\d{3})\s*(?:gummies|chews|capsules|caps|tablets|softgels)\b", re.I)
+
+
+def is_snack(title: str, product_type: str, include: list[str], exclude: list[str],
+             snack_types: list[str]) -> bool:
+    """A product is tracked if its title isn't excluded AND either the title has a snack
+    keyword or the store itself filed it under a snack product type.
+
+    Deliberately inclusive: a wrongly included item still has to beat the price-per-unit
+    threshold to alert, whereas a wrongly excluded one is a silently missed deal.
+    """
+    if _any_word(exclude, title) or _SUPPLEMENT_RE.search(title):
+        return False
+    return _any_word(include, title) or _any_word(snack_types, product_type or "")

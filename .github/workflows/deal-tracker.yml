@@ -11,7 +11,7 @@ on:
         default: false
 
 permissions:
-  contents: write   # commit state/seen.json and docs/deals.json back
+  contents: write   # commit state/seen.json back
   pages: write      # deploy the dashboard
   id-token: write   # required by actions/deploy-pages
 
@@ -23,6 +23,8 @@ jobs:
   poll:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      deployable: ${{ steps.package.outcome == 'success' }}
     steps:
       - uses: actions/checkout@v7
 
@@ -33,24 +35,32 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      # deals.json isn't committed (it's ~1.5 MB and changes hourly). Start from the live
+      # copy so a store that fails this run keeps showing its last good data.
+      - name: Restore previous dashboard data
+        run: |
+          curl -fsSL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/deals.json" \
+            -o docs/deals.json || echo "No previous deals.json (first deploy?)"
+
       - name: Poll stores and send alerts
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}   # optional, only for protected topics
         run: python deal_tracker.py ${{ inputs.force && '--force' || '' }}
 
-      - name: Commit state and dashboard data
+      - name: Commit state
         if: always() && hashFiles('state/seen.json') != ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add state/seen.json docs/deals.json
+          git add state/seen.json
           if git diff --cached --quiet; then echo "No changes"; exit 0; fi
           git commit -m "Update deals [skip ci]"
           git pull --rebase --autostash
           git push
 
       - name: Package dashboard
+        id: package
         if: always() && hashFiles('docs/deals.json') != ''
         uses: actions/upload-pages-artifact@v5
         with:
@@ -58,7 +68,7 @@ jobs:
 
   deploy:
     needs: poll
-    if: always() && needs.poll.result != 'cancelled'
+    if: always() && needs.poll.outputs.deployable == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

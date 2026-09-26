@@ -26,7 +26,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-from parsing import is_bar_or_snack, parse_best_before, parse_count
+from parsing import is_snack, parse_best_before, parse_count
 
 ROOT = Path(__file__).resolve().parent
 log = logging.getLogger("deal_tracker")
@@ -107,22 +107,33 @@ def make_session(cfg: dict) -> requests.Session:
     return s
 
 
-def fetch_collection(session: requests.Session, store: dict, cfg: dict) -> list[dict]:
+def store_urls(store: dict) -> list[str]:
+    """products.json endpoints for a store: its whole catalog unless collections are listed."""
+    base = store["base_url"].rstrip("/")
+    handles = store.get("collections") or ([store["collection"]] if store.get("collection") else [])
+    if not handles:
+        return [f"{base}/products.json"]
+    return [f"{base}/collections/{h}/products.json" for h in handles]
+
+
+def fetch_store(session: requests.Session, store: dict, cfg: dict) -> list[dict]:
     p = cfg["polling"]
-    url = f"{store['base_url'].rstrip('/')}/collections/{store['collection']}/products.json"
-    products: list[dict] = []
-    for page in range(1, p["max_pages"] + 1):
-        r = session.get(url, params={"limit": p["page_size"], "page": page},
-                        timeout=p["request_timeout_seconds"])
-        r.raise_for_status()
-        batch = r.json().get("products", [])
-        if not batch:
-            break
-        products.extend(batch)
-        if len(batch) < p["page_size"]:
-            break
-        time.sleep(p["delay_between_requests_seconds"])
-    return products
+    products: dict[int, dict] = {}  # de-dupe across collections
+    for url in store_urls(store):
+        for page in range(1, p["max_pages"] + 1):
+            r = session.get(url, params={"limit": p["page_size"], "page": page},
+                            timeout=p["request_timeout_seconds"])
+            r.raise_for_status()
+            batch = r.json().get("products", [])
+            for prod in batch:
+                products[prod["id"]] = prod
+            if len(batch) < p["page_size"]:
+                break
+            if page == p["max_pages"]:
+                log.warning("%s: hit max_pages=%d at %s -- raise it or products will be missed",
+                            store["name"], p["max_pages"], url)
+            time.sleep(p["delay_between_requests_seconds"])
+    return list(products.values())
 
 
 # --- Evaluation --------------------------------------------------------------
@@ -147,7 +158,7 @@ def to_deals(store: dict, products: list[dict], cfg: dict, today: date) -> tuple
     deals: list[Deal] = []
     for prod in products:
         title = html.unescape(prod.get("title", "")).strip()
-        if not is_bar_or_snack(title, f["include"], f["exclude"]):
+        if not is_snack(title, prod.get("product_type", ""), f["include"], f["exclude"], f["snack_types"]):
             stats["not_bar"] += 1
             continue
         body_date = parse_best_before(_strip_html(prod.get("body_html")), order, keyword_only=True)
@@ -198,7 +209,14 @@ def qualifies(d: Deal, th: dict) -> tuple[bool, str]:
     if d.per_bar > th["max_price_per_bar"]:
         return False, f"${d.per_bar:.2f}/bar > ${th['max_price_per_bar']:.2f}"
     if d.days_left is None:
-        return (True, "no BB date") if th["allow_missing_best_before"] else (False, "no BB date")
+        # With no date there's no "short-dated" reason it's cheap, so require a real markdown
+        # (otherwise every cheap single-serve snack at full price would alert).
+        if not th["allow_missing_best_before"]:
+            return False, "no BB date"
+        need = th.get("undated_min_discount_pct", 0)
+        if d.discount_pct < need:
+            return False, f"no BB date and only {d.discount_pct:.0f}% off (< {need}%)"
+        return True, "no BB date"
     if d.days_left < th["min_days_before_best_before"]:
         return False, "expired" if d.days_left < 0 else f"only {d.days_left}d left"
     return True, "ok"
@@ -210,6 +228,8 @@ def alert_reason(d: Deal, state_items: dict, th: dict) -> str | None:
         return "new"
     if d.price <= prev["price"] - th["min_price_drop"]:
         return f"price drop (was ${prev['price']:.2f})"
+    if prev.get("in_stock") is False:
+        return "back in stock"
     return None
 
 
@@ -299,10 +319,9 @@ def run(args: argparse.Namespace) -> int:
         if i:
             time.sleep(cfg["polling"]["delay_between_requests_seconds"])
         try:
-            products = fetch_collection(session, store, cfg)
+            products = fetch_store(session, store, cfg)
             if not products:
-                log.warning("%-24s returned 0 products -- collection empty or handle '%s' renamed?",
-                            store["name"], store["collection"])
+                log.warning("%-24s returned 0 products -- store down or collection renamed?", store["name"])
             deals, stats = to_deals(store, products, cfg, today)
             all_deals.extend(deals)
             in_stock = sum(d.in_stock for d in deals)
@@ -334,38 +353,59 @@ def run(args: argparse.Namespace) -> int:
         return 0
 
     msgs = build_messages(alerts, cfg["alerts"]["max_notifications_per_run"])
+    health_msgs, health = check_health(state.get("health", {}), store_status, cfg)
     if args.dry_run:
-        print(f"\n--- {len(msgs)} notification(s) that would be sent ---")
-        for m in msgs:
+        print(f"\n--- {len(msgs) + len(health_msgs)} notification(s) that would be sent ---")
+        for m in health_msgs + msgs:
             print(f"\n[{m['title']}]\n{m['message']}\n{m.get('click', '')}")
         return 1 if failures == len(cfg["stores"]) else 0
 
     # Only record an alerting item's new price once its notification actually went out,
     # so a failed send is retried next run instead of being silently lost.
     sent_ok = True
-    if msgs:
+    if msgs or health_msgs:
         if not os.environ.get("NTFY_TOPIC"):
-            log.error("NTFY_TOPIC is not set; %d notification(s) not sent", len(msgs))
+            log.error("NTFY_TOPIC is not set; %d notification(s) not sent", len(msgs) + len(health_msgs))
             sent_ok = False
         else:
+            for m in health_msgs:
+                try:
+                    send_ntfy(session, cfg, m)
+                except Exception as e:
+                    log.error("ntfy send failed for %r: %s", m["title"], e)
             for m in msgs:
                 try:
                     send_ntfy(session, cfg, m)
                 except Exception as e:
                     sent_ok = False
                     log.error("ntfy send failed for %r: %s", m["title"], e)
+    state["health"] = health
     alert_keys = {d.key for d, _ in alerts}
 
     stamp = now.isoformat(timespec="seconds")
-    for d in stock:
+    for d in all_deals:
         if d.key in alert_keys and not sent_ok:
             continue
         prev = items.get(d.key, {})
+        # Refresh last_seen at most daily so an unchanged item doesn't churn the state file.
+        seen = prev["last_seen"] if prev.get("last_seen", "")[:10] == stamp[:10] else stamp
+        if not d.in_stock:
+            # Keep the last in-stock price; remember it's out so a restock can alert.
+            if prev:
+                prev.update(in_stock=False, last_seen=seen)
+            else:
+                items[d.key] = {
+                    "store": d.store, "title": d.product_title, "flavor": d.flavor, "url": d.url,
+                    "price": d.price, "per_bar": d.per_bar, "count": d.count, "in_stock": False,
+                    "best_before": d.best_before.isoformat() if d.best_before else None,
+                    "first_seen": stamp, "last_seen": stamp,
+                }
+            continue
         entry = {
             "store": d.store, "title": d.product_title, "flavor": d.flavor, "url": d.url,
-            "price": d.price, "per_bar": d.per_bar, "count": d.count,
+            "price": d.price, "per_bar": d.per_bar, "count": d.count, "in_stock": True,
             "best_before": d.best_before.isoformat() if d.best_before else None,
-            "first_seen": prev.get("first_seen", stamp), "last_seen": stamp,
+            "first_seen": prev.get("first_seen", stamp), "last_seen": seen,
             "prev_price": prev.get("prev_price"), "price_changed_at": prev.get("price_changed_at"),
         }
         if prev and abs(prev["price"] - d.price) >= 0.005:
@@ -382,6 +422,40 @@ def run(args: argparse.Namespace) -> int:
         log.error("All stores failed")
         return 1
     return 0 if sent_ok else 2
+
+
+def check_health(health: dict, store_status: dict, cfg: dict) -> tuple[list[dict], dict]:
+    """Warn (once) when a store keeps failing or suddenly lists far fewer products, since
+    either means deals could be silently missed. Also say when it recovers.
+
+    Returns (messages, new health state); the caller persists the state."""
+    hc = cfg["health"]
+    health = {k: dict(v) for k, v in health.items()}
+    msgs = []
+    for name, st in store_status.items():
+        h = health.setdefault(name, {"fail_streak": 0, "usual_products": None, "warned": False})
+        problem = None
+        if not st["ok"]:
+            h["fail_streak"] += 1
+            if h["fail_streak"] >= hc["consecutive_failures"]:
+                problem = f"failed {h['fail_streak']} polls in a row: {st['error']}"
+        else:
+            h["fail_streak"] = 0
+            usual, n = h["usual_products"], st["products"]
+            if usual and n < usual * hc["min_product_ratio"]:
+                problem = f"returned {n} products (usually ~{usual}). Site change or blocking?"
+            else:
+                # Slow-moving baseline so gradual catalog changes don't trigger warnings.
+                h["usual_products"] = n if not usual else round(usual * 0.8 + n * 0.2)
+        if problem and not h["warned"]:
+            msgs.append({"title": f"⚠ Deal tracker: {name} needs attention", "message": problem,
+                         "tags": ["warning"]})
+            h["warned"] = True
+        elif not problem and h["warned"]:
+            msgs.append({"title": f"✅ Deal tracker: {name} is back to normal",
+                         "message": f"{st.get('products', 0)} products fetched.", "tags": ["white_check_mark"]})
+            h["warned"] = False
+    return msgs, health
 
 
 def write_snapshot(path: Path, deals: list[Deal], items: dict, store_status: dict,
@@ -419,7 +493,7 @@ def write_snapshot(path: Path, deals: list[Deal], items: dict, store_status: dic
     for s in cfg["stores"]:
         name = s["name"]
         status = store_status.get(name, {"ok": False, "error": "not polled"})
-        url = f"{s['base_url'].rstrip('/')}/collections/{s['collection']}"
+        url = store_urls(s)[0].removesuffix("/products.json") or s["base_url"]
         if status["ok"]:
             stores[name] = {**status, "url": url, "last_ok": stamp}
         else:
@@ -431,14 +505,14 @@ def write_snapshot(path: Path, deals: list[Deal], items: dict, store_status: dic
         # Earliest first_seen: items first seen in the initial run aren't really "new".
         "tracking_since": min((v["first_seen"] for v in items.values() if v.get("first_seen")), default=None),
         "poll_interval_minutes": cfg["polling"]["min_interval_minutes"],
-        "thresholds": {k: th[k] for k in ("max_price_per_bar", "min_days_before_best_before",
-                                          "allow_missing_best_before")},
+        "thresholds": {k: th.get(k) for k in ("max_price_per_bar", "min_days_before_best_before",
+                                              "allow_missing_best_before", "undated_min_discount_pct")},
         "stores": stores,
         "items": rows,
     }
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(".tmp")
-    tmp.write_text(json.dumps(snapshot, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    tmp.write_text(json.dumps(snapshot, separators=(",", ":"), ensure_ascii=False), encoding="utf-8")
     tmp.replace(path)
 
 

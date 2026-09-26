@@ -107,3 +107,79 @@ EXCLUDE = ["drink", "sauce", "syrup", "spices", "band", "bands", "mayonnaise"]
 ])
 def test_is_bar_or_snack(title, expected):
     assert is_bar_or_snack(title, INCLUDE, EXCLUDE) is expected
+
+
+# --- Regression: real catalog titles, classified with the real config.toml -----------
+import tomllib
+from pathlib import Path
+
+from parsing import is_snack
+
+_F = tomllib.loads((Path(__file__).resolve().parents[1] / "config.toml").read_text(encoding="utf-8"))["filter"]
+
+
+def _snack(title, ptype=""):
+    return is_snack(title, ptype, _F["include"], _F["exclude"], _F["snack_types"])
+
+
+@pytest.mark.parametrize("title,ptype", [
+    # Caught by title keywords
+    ("Barebells Protein Bar (12 bars)", ""),
+    ("Quest Frosted Cookies (8 Cookies)", ""),
+    ("Legendary Foods Tasty Pastry (10 Packs)", ""),
+    ("Legendary Foods GF Keto Protein Pastry (Box of 10 \"poptarts\")", ""),
+    ("Quest Peanut Butter Cups (12 Pack)", ""),
+    ("Legendary Foods Protein Sweet Roll (8 Packs)", ""),
+    ("Bowmar Apex Protein Meat Sticks (1 stick)", ""),
+    ("MuscleSport GF Protein Whoopies (1 whoopie)", ""),
+    ("Go Nutrition GF Go Gummy Protein Candy (1 Bag)", ""),
+    ("Quest Protein Chips (8 Bags)", ""),
+    ("Omaha Protein Popcorn 124g-224g", ""),
+    ("Crisp Power High Protein Keto Vegan Pretzels (BOX of 6)", ""),
+    ("Tide Treats GF Crispy Rice Protein Bars (1 Box of 8)", ""),
+    ("Go Nutrition Go Beanz Roasted Edamame (20 Pack)", ""),
+    ("Better Bovine Extra Lean Beef Jerky (1 bag)", ""),
+    ("AP Prime Bites Keto GF Mini Protein Muffins (1 pack of 3 mini muffins)", ""),
+    ("Smarter Snacks GF Protein Waffle (Box of 12)", ""),
+    # Caught only because the store filed it as a snack
+    ("Nutraphase Clean Beans (3 servings)", "Protein Snacks"),
+    ("Bucked Up Protein Bites", "Protein Snacks"),
+    ("SINGLE PACK Quest PEANUT BUTTER CUPS, 2 pack", "Protein Bars"),
+])
+def test_snacks_are_tracked(title, ptype):
+    assert _snack(title, ptype)
+
+
+@pytest.mark.parametrize("title,ptype", [
+    ("Barebells Protein Drink (12 Cans)", "Protein Bars & Snacks"),
+    ("Mrs. Taste Zero Calories Cookies & Cream Syrup (335g)", "Protein Bars & Snacks"),
+    ("The Flavor Gang Sweet Papi Sauce (473ml)", "Protein Bars & Snacks"),
+    ("Protein 2O Infused Protein Water (12 Bottles)", "Protein Bars & Snacks"),
+    ("Musclesport Cream Of Rice Gourmet Hot Cereal (25 Servs)", "Protein Bars & Snacks"),
+    ("PB2 GF Powdered Peanut Butter (1 LB)", "Protein Snacks"),
+    ("Mission Fajita Size Carb Balance Flour Tortillas - 8oz/8ct", "Protein Snacks"),
+    ("Youtheory BIOTIN+ ZERO SUGAR GUMMIES, 60 Gummies", ""),
+    ("Nova Pharma Dodo (60 Gummies)", ""),
+    ("Betty Crocker Lower Sugar Chocolate Chip Cookie Mix (16 servings)", "Protein Snacks"),
+    ("Grizzly 2\" SUPREME GRIP BAR COLLARS 8780-04", ""),
+    ("Optimum Nutrition Gold Standard 100% Whey Protein (5lbs)", ""),
+    ("Prozis Energy Gel (1 gel - 25G)", "Protein Snacks"),
+])
+def test_non_snacks_are_skipped(title, ptype):
+    assert not _snack(title, ptype)
+
+
+@pytest.mark.parametrize("text,expected", [
+    ("ChocZero Peanut Stackers (12 packs of 2 cookies)", 12),
+    ("NEW Quest Crispy Protein Chips (1 bag of 4 servings)", 1),
+    ("Simply Protein Vegan Tortilla Chips (1 bag of 2.5 servings)", 1),
+    ("Grenade Creme Egg Flavour Soft Core Protein Bar 18/bars", 18),
+    ("Iron Vegan SPROUTED PROTEIN BARS, 12/box", 12),
+    ("AP Prime Bites (BOX OF 12 PACKS of 3 mini muffins)", 12),
+    ("Quest GF Peanut Butter Cups (1 x 2-cup package)", 1),
+    ("Quest GF Peanut Butter Cups (Box of 12 2-cup packages)", 12),
+    ("Legendary Foods Protein Sweet Roll (8 Packs)", 8),
+    ("Bowmar Apex Protein Meat Sticks (1 stick)", 1),
+])
+def test_parse_count_snacks(text, expected):
+    assert parse_count(text) == expected

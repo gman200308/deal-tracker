@@ -1,33 +1,48 @@
 # Protein Bar Deal Tracker
 
-Watches clearance/bar collections on Canadian Shopify supplement stores and pushes an
-[ntfy.sh](https://ntfy.sh) notification when a short-dated protein bar is a real deal.
+Watches the full catalogs of Canadian Shopify supplement stores and pushes an
+[ntfy.sh](https://ntfy.sh) notification when a short-dated protein bar or snack is a real deal.
 
-| Store | Collection endpoint |
+| Store | Endpoint |
 |---|---|
-| SupplementSource | `https://www.supplementsource.ca/collections/clearance-protein-bars/products.json` |
-| Vita-Plus | `https://vita-plus.ca/collections/clearance/products.json` |
-| Chicks and Muscles | `https://chicksandmuscles.ca/collections/bars-snacks/products.json` |
-| Top Nutrition & Fitness | `https://topnutritionandfitness.com/collections/clearance/products.json` |
+| SupplementSource | `https://www.supplementsource.ca/products.json` |
+| Vita-Plus | `https://vita-plus.ca/products.json` |
+| Chicks and Muscles | `https://chicksandmuscles.ca/products.json` |
+| Top Nutrition & Fitness | `https://topnutritionandfitness.com/products.json` |
+
+It scans whole catalogs instead of just "clearance" collections, because short-dated stock
+often isn't filed there. On 2026-09-26 the clearance-only scan missed Built Puff at
+$1.67/bar (Chicks and Muscles) and Misfits at $1.67/bar (Vita-Plus). Each catalog is
+2–3 pages, so a full poll is about 10 requests across all four stores.
 
 ## How it works
 
 For every store, the tracker pages through `products.json?limit=250&page=N` until it gets an
 empty page. Then, for each product:
 
-1. **Bar/snack filter**: the product title must contain an `include` keyword (bar, cookie,
-   pastry, snack…) and no `exclude` keyword (drink, sauce, powder, spices…).
+1. **Snack filter** (deliberately inclusive). A product is tracked when its title has no
+   `exclude` word (drinks, sauces, powders, vitamins…) and either:
+   - its title has an `include` word (bar, cookie, pastry, chips, cups, gummies, jerky…), or
+   - the store itself filed it under a snack product type (`snack_types`, e.g. "Protein Snacks").
+
+   Supplements sold as "60 Gummies" and similar are always skipped. A wrongly included item
+   still has to beat the price threshold to alert, whereas a wrongly excluded one is a
+   silently missed deal.
 2. **Per variant** (each flavour/size is its own listing, often with its own date):
-   - Out-of-stock variants are skipped.
+   - Out-of-stock variants are remembered, so a restock can alert.
    - **Bar count** comes from the variant title, then the product title: `12 Bars/Box`,
-     `60g x 12`, `Box of 12`, `(1 bar)`, `SINGLE BAR`, `6 Pastry`, `21 cookies`, `12-pack`…
+     `60g x 12`, `Box of 12`, `12/box`, `(1 bar)`, `SINGLE BAR`, `6 Pastry`, `21 cookies`,
+     `12-pack`, `12 packs of 2 cookies` (12). Servings aren't units: `1 bag of 4 servings` counts as 1.
      If no count is stated, it assumes 1, so the price per bar is never understated.
    - **Best-before date** comes from the variant title, then the product title, then the
      description (description only when a keyword like "Best Before" introduces the date).
    - **Discount %** = `(compare_at_price − price) / compare_at_price`.
    - **Price per bar** = `price / count`.
-3. **Alert** when the variant is **new** or its **price dropped**, *and* it costs
-   ≤ `max_price_per_bar` per bar, *and* it has at least `min_days_before_best_before` days left.
+3. **Alert** when the variant is **new**, its **price dropped**, or it's **back in stock**, *and*:
+   - it costs ≤ `max_price_per_bar` per bar, *and*
+   - it has at least `min_days_before_best_before` days left. If the listing has no date, it
+     must instead be at least `undated_min_discount_pct` off, so cheap full-price single-serve
+     snacks don't alert.
    Variants from the same product are grouped into one notification. The notification links
    to the exact variant.
 
@@ -59,12 +74,21 @@ All thresholds are in [`config.toml`](config.toml):
 | `thresholds.max_price_per_bar` | `2.50` | CAD per bar, inclusive |
 | `thresholds.min_days_before_best_before` | `7` | days that must remain |
 | `thresholds.min_price_drop` | `0.01` | smallest drop that counts as a price drop |
-| `thresholds.allow_missing_best_before` | `true` | alert on cheap bars that list no date |
+| `thresholds.allow_missing_best_before` | `true` | alert on cheap bars that list no date... |
+| `thresholds.undated_min_discount_pct` | `20` | ...if they're at least this much off |
+| `health.consecutive_failures` | `3` | failed polls in a row before a warning notification |
+| `health.min_product_ratio` | `0.5` | warn if a store suddenly lists under half its usual products |
 | `polling.min_interval_minutes` | `60` | refuses to poll more often (`--force` overrides) |
 | `alerts.max_notifications_per_run` | `8` | extra deals get bundled into one summary |
 | `dates.numeric_order` | `MDY` | how to read ambiguous `03/04/26` |
 
-To add a store, append another `[[stores]]` block with `name`, `base_url`, and `collection`.
+To add a store, append another `[[stores]]` block with `name` and `base_url`. That scans the
+whole catalog. To scan only certain collections, add `collections = ["handle", ...]`.
+
+**Tuning the filter:** open the dashboard's *Everything* view. A snack that's missing
+needs a word in `include`, or its product type in `snack_types`. A non-snack that's
+showing up needs a word in `exclude`. Then add the title to the regression tests in
+`tests/test_parsing.py`.
 
 The ntfy topic is **not** in the config. It is read from the `NTFY_TOPIC` environment variable.
 Anyone who knows the topic name can read it, so pick something unguessable. Optional variables:
@@ -100,6 +124,9 @@ alerted when something is new or cheaper.
 with one row per flavour. It reads `docs/deals.json`, which the tracker rewrites on every run
 and the workflow deploys to Pages right after each poll.
 
+`deals.json` isn't committed, because it's about 1.3 MB and changes hourly. Each run starts
+from the live copy on the site instead.
+
 - **Views:**
   - **Deals**: items that pass your thresholds.
   - **All in stock**: every in-stock item.
@@ -123,6 +150,20 @@ python -m http.server 8765 --directory docs
 Then open http://localhost:8765. `--snapshot-only` only rewrites `deals.json`. It doesn't send
 alerts or touch the state file.
 
+## Safeguards against missed deals
+
+| Risk | Safeguard |
+|---|---|
+| Deal filed outside "clearance" | Whole catalogs are scanned |
+| Snack title lacks a known keyword | The store's own product type also counts |
+| Count unparsed, so per-bar price overstated | Many count formats are handled. Unknown counts show as `12?` on the dashboard |
+| Item sells out then restocks | "Back in stock" alert |
+| A store breaks, blocks us, or changes its site | ntfy warning after 3 failed polls, or if the product count collapses. It says when the store recovers |
+| Pagination cap reached | Logged as a warning |
+| ntfy send fails | The item isn't marked as seen, so the alert retries next run |
+| The whole workflow fails | GitHub emails you (on by default for failed scheduled runs) |
+| A keyword edit breaks a known snack | Regression tests use real catalog titles and the real `config.toml` |
+
 ## Error handling
 
 - Each store is fetched in its own `try` block, so one broken store is logged and the rest continue.
@@ -136,7 +177,7 @@ alerts or touch the state file.
    Nothing secret is committed: the ntfy topic lives in a repo secret.
 2. **Settings → Secrets and variables → Actions → New repository secret**: `NTFY_TOPIC` = your topic.
 3. **Settings → Actions → General → Workflow permissions** → *Read and write permissions*,
-   so the workflow can commit `state/seen.json` and `docs/deals.json`.
+   so the workflow can commit `state/seen.json`.
 4. **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 5. Subscribe to the topic in the ntfy app (iOS/Android) or at `https://ntfy.sh/<topic>`.
 6. Trigger it once from **Actions → Deal tracker → Run workflow**. The dashboard will be at

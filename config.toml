@@ -5,7 +5,8 @@
 max_price_per_bar = 2.50        # CAD; alert only at or below this per-bar price
 min_days_before_best_before = 7 # need at least this many days left before the BB date
 min_price_drop = 0.01           # CAD; a "price drop" must be at least this much
-allow_missing_best_before = true # alert on items whose listing shows no BB date at all
+allow_missing_best_before = true # alert on items whose listing shows no BB date at all...
+undated_min_discount_pct = 20   # ...but only if marked down at least this much (0 = any)
 assume_count_if_unknown = 1     # bar count used when the title doesn't state one
                                 # (1 = conservative: price/bar is never understated)
 
@@ -34,38 +35,68 @@ forget_after_days = 30          # drop items not seen for this long (they count 
 [site]
 snapshot_path = "docs/deals.json"   # data file for the GitHub Pages dashboard
 
+[health]
+# Push a warning to ntfy when a store looks broken, and again when it recovers.
+consecutive_failures = 3        # failed polls in a row before warning
+min_product_ratio = 0.5         # warn if a store returns < 50% of its usual product count
+
 [filter]
-# Product title must contain one of these words (whole-word, case-insensitive)...
+# A product is tracked when its title has none of the `exclude` words AND either its
+# title has an `include` word or the store's own product type matches `snack_types`.
+# Matching is whole-word and case-insensitive. Err on the side of including: a wrongly
+# included item still has to beat max_price_per_bar to alert.
 include = ["bar", "bars", "snack", "snacks", "cookie", "cookies", "wafer", "wafers",
            "pastry", "pastries", "brownie", "brownies", "bites", "puff", "puffs",
-           "crisps", "chips", "protein balls", "jerky",
-           "waffle", "waffles", "tart", "tarts", "pop-tart", "pop-tarts", "donut", "donuts",
-           "muffin", "muffins", "pretzels", "popcorn", "crackers", "granola", "pork rinds",
-           "nachos", "tortilla"]
-# ...and none of these.
-exclude = ["drink", "drinks", "can", "cans", "sauce", "sauces", "syrup", "dressing",
-           "mayo", "mayonnaise", "ketchup", "mustard", "jam", "spray", "spice", "spices",
-           "seasoning", "powder", "whey", "isolate", "pre-workout", "creatine",
-           "capsules", "caps", "shake", "rtd", "gym bag", "belt", "band", "bands",
-           "electrolyte", "greens"]
+           "crisps", "chips", "protein balls", "jerky", "waffle", "waffles", "tart", "tarts",
+           "pop-tart", "pop-tarts", "donut", "donuts", "muffin", "muffins", "pretzels",
+           "popcorn", "crackers", "granola", "pork rinds", "nachos", "tortilla chips",
+           "cups", "peanut butter cups", "pb cups", "candy", "candies", "gummies", "gummy",
+           "truffles", "whoopie", "whoopies", "sweet roll", "sweet rolls", "meat stick",
+           "meat sticks", "square", "squares", "gems", "m&m's", "almonds", "edamame",
+           "trail mix", "cake", "cakes", "cheesecake", "rice crispy", "krispies", "bark",
+           "fudge", "chocolate", "chocolates", "beanz", "clean beans"]
+snack_types = ["protein bars", "bars", "protein snacks", "snacks", "snack",
+               "low carb snacks", "protein bars & snacks", "edible", "functional food"]
+exclude = [
+  # drinks
+  "drink", "drinks", "can", "cans", "water", "rtd", "shake", "shot", "bottle", "bottles",
+  "hot cocoa", "coffee", "creamer",
+  # condiments / cooking
+  "sauce", "sauces", "syrup", "dressing", "dip", "mayo", "mayonnaise", "ketchup",
+  "mustard", "jam", "spread", "spreads", "spray", "oil", "spice", "spices", "seasoning",
+  # meals / staples (not snacks)
+  "hot cereal", "protein cereal", "oatmeal", "porridge", "cream of rice", "creamy rice",
+  "konjac", "tortillas", "street taco", "bread", "loaf", "mac and cheese", "mac & cheese",
+  "pizza", "cake mix", "pancake mix",
+  # supplements / gear
+  "powder", "powdered", "whey", "isolate", "pre-workout", "creatine", "capsules", "caps",
+  "electrolyte", "greens", "gym bag", "belt", "band", "bands", "shaker", "gift card",
+  "lb", "lbs", "kg",   # tubs of protein are sold by weight; snacks aren't
+  # vitamin gummies etc. (60 gummies at $0.30 each would look like a "deal")
+  "vitamin", "vitamins", "multivitamin", "biotin", "probiotic", "ashwagandha",
+  "cider vinegar", "prenatal", "pregnatal", "d3", "b12", "melatonin", "vcaps",
+  "softgels", "tablets", "gel", "drops",
+  # baking / pantry / misc
+  "mix", "sweetener", "sugar replacement", "pudding", "pasta", "mash", "wraps", "oats",
+  "broth", "lemonade", "hot chocolate", "mac", "grip", "grips", "collar", "collars",
+]
 
-# --- Stores (Shopify collection handles) -------------------------------------
+# --- Stores -------------------------------------------------------------------
+# Leave `collections` out to scan the store's whole catalog (/products.json), which is
+# what catches short-dated stock that isn't filed under "clearance". Or list specific
+# collection handles, e.g. collections = ["clearance", "protein-bars"].
 [[stores]]
 name = "SupplementSource"
 base_url = "https://www.supplementsource.ca"
-collection = "clearance-protein-bars"
 
 [[stores]]
 name = "Vita-Plus"
 base_url = "https://vita-plus.ca"
-collection = "clearance"
 
 [[stores]]
 name = "Chicks and Muscles"
 base_url = "https://chicksandmuscles.ca"
-collection = "bars-snacks"
 
 [[stores]]
 name = "Top Nutrition & Fitness"
 base_url = "https://topnutritionandfitness.com"
-collection = "clearance"

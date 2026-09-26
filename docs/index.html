@@ -300,7 +300,8 @@ footer { margin-top: 32px; font-size: 12.5px; color: var(--muted); text-align: c
 
   function renderHeader() {
     const d = state.data, th = d.thresholds;
-    $('#rules').textContent = `≤ ${money(th.max_price_per_bar)}/bar · at least ${th.min_days_before_best_before} days before best-before · in stock`;
+    $('#rules').textContent = `≤ ${money(th.max_price_per_bar)}/bar · at least ${th.min_days_before_best_before} days before best-before · in stock`
+      + (th.undated_min_discount_pct ? ` · undated items need ${th.undated_min_discount_pct}%+ off` : '');
     const age = Date.now() - new Date(d.generated_at);
     const stale = age > (d.poll_interval_minutes * 2.5) * 6e4;
     $('#updated').replaceChildren(
