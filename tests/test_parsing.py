@@ -145,6 +145,16 @@ def _snack(title, ptype=""):
     ("Nutraphase Clean Beans (3 servings)", "Protein Snacks"),
     ("Bucked Up Protein Bites", "Protein Snacks"),
     ("SINGLE PACK Quest PEANUT BUTTER CUPS, 2 pack", "Protein Bars"),
+    # research-report stores (incl. French titles from Protein à Rabais)
+    ("Carb Killa barre de protéine", ""),
+    ("Beignes protéinés - Protein Donuts", ""),
+    ("Edamames Grillés 26g", ""),
+    ("Quest Cup", ""),
+    ("Nutry Nuts", ""),
+    ("Gummy Gainz | Sour Peach Protein Gummies (6 Pack Box)", ""),
+    ("Herbaland Vegan Protein Gummies, 6g Protein and 12g Fibre", ""),
+    ("Country Prime Meats Dry Pepperoni Sticks, Gluten-Free", ""),
+    ("Omaha Protein Popcorn 124 Grams / Bag", ""),
 ])
 def test_snacks_are_tracked(title, ptype):
     assert _snack(title, ptype)
@@ -164,6 +174,23 @@ def test_snacks_are_tracked(title, ptype):
     ("Grizzly 2\" SUPREME GRIP BAR COLLARS 8780-04", ""),
     ("Optimum Nutrition Gold Standard 100% Whey Protein (5lbs)", ""),
     ("Prozis Energy Gel (1 gel - 25G)", "Protein Snacks"),
+    # found when adding the research-report stores
+    ("Attitude Leaves Bar Shampoo", ""),
+    ("ALEVA NATURALS Stain & Laundry Bar (220 gr)", ""),
+    ("New Nordic Turmeric Gummies, 60 Vegan Gummies", ""),
+    ("ALLKIDZ NATURALS Multi Gummy Bears (110 ct)", ""),
+    ("Zhou Shilajit Gummies Natural Cherry Vanilla 60 Count", ""),
+    ("ALLMAX Isoflex (Chocolate - 908 gr)", ""),
+    ("5% Nutrition Real Carbs Rice Chocolate 40 Servings", ""),
+    ("Alpha Lion Gains Candy Mitoburn 60 Servings", ""),
+    ("Obsidian Ammonia Nose Candy Menthol Smelling Salts", ""),
+    ("Iron Body Fitness | Push Up Bars (Pair)", ""),
+    ("DivaCup Reusable Menstrual Cup, Medical-Grade Silicone", ""),
+    ("Mutant Stadium Cup with Lid, 32oz", ""),
+    ("Hydra cup Shakers 20oz", "Protein Snacks"),
+    ("Palmini Lasagne de coeur de palmier", ""),
+    ("Stevia Sweetleaf - New Roots Herbal", ""),
+    ("Dove soap Gentle Exfoliating Bar - 6 pack", ""),
 ])
 def test_non_snacks_are_skipped(title, ptype):
     assert not _snack(title, ptype)
@@ -182,4 +209,34 @@ def test_non_snacks_are_skipped(title, ptype):
     ("Bowmar Apex Protein Meat Sticks (1 stick)", 1),
 ])
 def test_parse_count_snacks(text, expected):
+    assert parse_count(text) == expected
+
+
+@pytest.mark.parametrize("text,expected", [
+    ("Peanut butter chocolate (AOUT 2025)", date(2025, 8, 31)),
+    ("Caramel Crunch (exp 05/2027)", date(2027, 5, 31)),
+    ("Strawberry Shortcake (exp 10/26)", date(2026, 10, 31)),
+    ("Meilleur avant 15 déc. 2026", date(2026, 12, 15)),
+    ("Meilleur avant: juillet 2026", date(2026, 7, 31)),
+    ("Exp. 30 juin 2027", date(2027, 6, 30)),
+    ("Buffalo Ranch - LIQUIDATION 7x 06/26", date(2026, 6, 30)),
+    ("Ranch (LIQUIDATION - 4x 05/26)", date(2026, 5, 31)),
+    ("Maison de la mai", None),
+])
+def test_parse_best_before_french(text, expected):
+    assert parse_best_before(text) == expected
+
+
+@pytest.mark.parametrize("text,expected", [
+    ("Boite (12 barres)", 12),
+    ("Boîte de 12", 12),
+    ("Paquet de 6 biscuits", 6),
+    ("1 x 64g (unité)", 1),
+    ("10 x 28g", 10),
+    ("Boîte de 12 portions", None),                      # servings, not units
+    ("BioX Protein 32 Bar - Single *LIMITED TIME OFFER*", 1),  # 32 = grams of protein
+    ("BioX Protein 32 Bar", None),
+    ("Quest Protein 12 Bars", 12),
+])
+def test_parse_count_french_and_protein_grams(text, expected):
     assert parse_count(text) == expected

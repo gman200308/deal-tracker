@@ -1,19 +1,58 @@
 # Protein Bar Deal Tracker
 
-Watches the full catalogs of Canadian Shopify supplement stores and pushes an
+Watches 21 Canadian and US supplement stores and pushes an
 [ntfy.sh](https://ntfy.sh) notification when a short-dated protein bar or snack is a real deal.
 
-| Store | Endpoint |
-|---|---|
-| SupplementSource | `https://www.supplementsource.ca/products.json` |
-| Vita-Plus | `https://vita-plus.ca/products.json` |
-| Chicks and Muscles | `https://chicksandmuscles.ca/products.json` |
-| Top Nutrition & Fitness | `https://topnutritionandfitness.com/products.json` |
+**Canadian (CAD):**
+- **Original four:** SupplementSource, Vita-Plus, Chicks and Muscles, Top Nutrition & Fitness.
+- **Added from research:** Fitshop.ca, Protein Depot, Supplements Canada, Canadian Protein,
+  Vitamart, 2GuysOnline, Nutrition House, Believe Supplements.
+- **Custom reader:** Protein à Rabais, which isn't on Shopify, so
+  [`custom_stores.py`](custom_stores.py) reads its liquidation, protein bar, chocolate and
+  grocery & snacks categories. It opens product pages only for snack-looking items, about
+  30 pages. Its French titles, pack sizes ("Boîte de 12", "12 barres") and dates
+  ("exp 05/2027", "AOUT 2025", "LIQUIDATION 7x 06/26") are all parsed.
+- **Custom reader:** Well.ca. It reads its fitness & protein clearance and protein bars &
+  snacks categories. The site's own paging breaks after page 2 (for real visitors too), so the
+  reader merges page 1 of every sort order. That reaches about 77 of 82 clearance items and
+  about 260 of 680 bars. Well.ca doesn't show best-before dates, so its items fall under the
+  "undated" rule.
+- **Custom reader:** Supplements Direct (Vancouver, WooCommerce), read through its public
+  Store API. Its storefront currently says "Site is undergoing maintenance", so the reader
+  skips it until that message is gone.
+
+2GuysOnline is a general grocery liquidator, so only items with "protein" in the title are
+tracked there (`require_words`).
+
+**US (USD, converted to CAD):** Best Price Nutrition, Supplement Warehouse, NutriCartel,
+PoorBoy Supplements, Nutrition Depot (Houston), and Dive Bar (its Canada collection only). Each lists Canada in its
+Shopify `ships_to_countries`. Prices are converted at the Bank of Canada's daily rate.
+Cross-border shipping, duty and brokerage are **not** included, and alerts say so.
 
 It scans whole catalogs instead of just "clearance" collections, because short-dated stock
 often isn't filed there. On 2026-09-26 the clearance-only scan missed Built Puff at
-$1.67/bar (Chicks and Muscles) and Misfits at $1.67/bar (Vita-Plus). Each catalog is
-2–3 pages, so a full poll is about 10 requests across all four stores.
+$1.67/bar (Chicks and Muscles) and Misfits at $1.67/bar (Vita-Plus). A full poll takes
+about 9 minutes. Vitamart's ~10,000 products are most of that.
+
+### Stores considered but not added
+
+| Store | Why |
+|---|---|
+| Supplement Hunt (US) | Doesn't ship outside the US (its Shopify ships-to list is US-only) |
+| Fitdeals.ca | Domain doesn't resolve, so the site appears to be offline |
+| Healthy Planet | Blocks automated access with a bot challenge |
+| Muscle & Strength | Cloudflare bot challenge (403). Won't bypass |
+| Popeye's | Clearance category is empty, prices load via JavaScript, behind Cloudflare |
+| Myprotein CA | Its clearance page now redirects to general nutrition. No best-before labelling |
+| Supplement King | robots.txt disallows every URL with `?`, so categories can't be paged. No clearance section |
+| SameDaySupplements | US, full price, no clearance or short-dated section |
+| Herc's | hercsnutrition.com is a parked domain. The real site wasn't found |
+| Supplement Superstore | Now redirects to SupplementSource (already tracked) |
+| Nutrition Depot (Canadian, SND Canada) | Now redirects to Supplements Canada (already tracked) |
+| Lean Machine, Muscle Ave, Mr. Supplement (CA), allsupplements.ca | No such store found. The domains don't exist or are parked |
+| Sportsfuel | Only a New Zealand store, which ships to NZ only |
+| DPS Nutrition (US) | Doesn't ship internationally |
+| Amazon.ca, eBay.ca, Flashfood, Too Good To Go, Winners, Costco, Kijiji, Facebook Marketplace | No public product feed, app-only or in-store, or scraping isn't permitted |
 
 ## How it works
 
@@ -25,7 +64,8 @@ empty page. Then, for each product:
    - its title has an `include` word (bar, cookie, pastry, chips, cups, gummies, jerky…), or
    - the store itself filed it under a snack product type (`snack_types`, e.g. "Protein Snacks").
 
-   Supplements sold as "60 Gummies" and similar are always skipped. A wrongly included item
+   Supplements and bulk goods are always skipped: "60 (Vegan) Gummies", "110 ct",
+   20+ servings, or a single package of 250 g or more. A wrongly included item
    still has to beat the price threshold to alert, whereas a wrongly excluded one is a
    silently missed deal.
 2. **Per variant** (each flavour/size is its own listing, often with its own date):
@@ -83,7 +123,11 @@ All thresholds are in [`config.toml`](config.toml):
 | `dates.numeric_order` | `MDY` | how to read ambiguous `03/04/26` |
 
 To add a store, append another `[[stores]]` block with `name` and `base_url`. That scans the
-whole catalog. To scan only certain collections, add `collections = ["handle", ...]`.
+whole catalog. Optional keys:
+- `collections = ["handle", ...]`: scan only certain collections.
+- `currency = "USD"`: convert prices to CAD.
+- `require_words = [...]`: only track titles containing one of these words.
+- `platform = "..."`: use a custom reader from `custom_stores.py`.
 
 **Tuning the filter:** open the dashboard's *Everything* view. A snack that's missing
 needs a word in `include`, or its product type in `snack_types`. A non-snack that's

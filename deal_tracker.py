@@ -26,7 +26,8 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-from parsing import is_snack, parse_best_before, parse_count
+from custom_stores import READERS
+from parsing import has_word, is_snack, parse_best_before, parse_count
 
 ROOT = Path(__file__).resolve().parent
 log = logging.getLogger("deal_tracker")
@@ -51,6 +52,8 @@ class Deal:
     days_left: int | None
     in_stock: bool = True
     image: str | None = None
+    currency: str = "CAD"            # store's own currency; price/compare_at are always CAD
+    native_price: float | None = None
 
     @property
     def key(self) -> str:
@@ -117,6 +120,11 @@ def store_urls(store: dict) -> list[str]:
 
 
 def fetch_store(session: requests.Session, store: dict, cfg: dict) -> list[dict]:
+    platform = store.get("platform", "shopify")
+    if platform != "shopify":
+        f = cfg["filter"]
+        return READERS[platform](session, store, cfg, lambda title, ptype: is_snack(
+            title, ptype, f["include"], f["exclude"], f["snack_types"]))
     p = cfg["polling"]
     products: dict[int, dict] = {}  # de-dupe across collections
     for url in store_urls(store):
@@ -134,6 +142,21 @@ def fetch_store(session: requests.Session, store: dict, cfg: dict) -> list[dict]
                             store["name"], p["max_pages"], url)
             time.sleep(p["delay_between_requests_seconds"])
     return list(products.values())
+
+
+def fetch_usd_cad(session: requests.Session, cfg: dict) -> float:
+    """Today's Bank of Canada USD->CAD rate, falling back to the config value."""
+    fallback = cfg["fx"]["usd_cad_fallback"]
+    try:
+        r = session.get("https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json",
+                        params={"recent": 1}, timeout=15)
+        r.raise_for_status()
+        rate = float(r.json()["observations"][0]["FXUSDCAD"]["v"])
+        log.info("USD->CAD rate %.4f (Bank of Canada)", rate)
+        return rate
+    except Exception as e:
+        log.warning("Couldn't fetch USD->CAD rate (%s); using fallback %.2f", e, fallback)
+        return fallback
 
 
 # --- Evaluation --------------------------------------------------------------
@@ -154,11 +177,14 @@ def to_deals(store: dict, products: list[dict], cfg: dict, today: date) -> tuple
 
     Returns (deals, counters)."""
     f, th, order = cfg["filter"], cfg["thresholds"], cfg["dates"]["numeric_order"]
+    currency = store.get("currency", "CAD")
+    fx = store.get("_fx_to_cad", 1.0)   # set by run() for non-CAD stores
     stats = {"products": len(products), "not_bar": 0, "out_of_stock": 0}
     deals: list[Deal] = []
     for prod in products:
         title = html.unescape(prod.get("title", "")).strip()
-        if not is_snack(title, prod.get("product_type", ""), f["include"], f["exclude"], f["snack_types"]):
+        if (not is_snack(title, prod.get("product_type", ""), f["include"], f["exclude"], f["snack_types"])
+                or (store.get("require_words") and not has_word(store["require_words"], title))):
             stats["not_bar"] += 1
             continue
         body_date = parse_best_before(_strip_html(prod.get("body_html")), order, keyword_only=True)
@@ -171,11 +197,12 @@ def to_deals(store: dict, products: list[dict], cfg: dict, today: date) -> tuple
                 stats["out_of_stock"] += 1
             vt = html.unescape(v.get("title", "")).strip()
             try:
-                price = float(v["price"])
+                native = float(v["price"])
             except (KeyError, TypeError, ValueError):
                 continue
+            price = round(native * fx, 2)
             cmp_raw = v.get("compare_at_price")
-            compare_at = float(cmp_raw) if cmp_raw not in (None, "", "0.00") else None
+            compare_at = round(float(cmp_raw) * fx, 2) if cmp_raw not in (None, "", "0.00") else None
             discount = round((compare_at - price) / compare_at * 100, 1) if compare_at and compare_at > price else 0.0
 
             count = parse_count(vt) or parse_count(title)
@@ -194,7 +221,8 @@ def to_deals(store: dict, products: list[dict], cfg: dict, today: date) -> tuple
             deals.append(Deal(
                 store=store["name"], product_id=prod["id"], variant_id=v["id"],
                 product_title=title, variant_title=vt,
-                url=f"{store['base_url'].rstrip('/')}/products/{prod['handle']}?variant={v['id']}",
+                url=prod.get("url") or f"{store['base_url'].rstrip('/')}/products/{prod['handle']}?variant={v['id']}",
+                currency=currency, native_price=native,
                 price=price, compare_at=compare_at, discount_pct=discount,
                 count=count, count_known=count_known, per_bar=round(price / count, 2),
                 best_before=bb, date_source=src,
@@ -240,7 +268,8 @@ def _deal_line(d: Deal, reason: str) -> str:
     disc = f" (-{d.discount_pct:.0f}%)" if d.discount_pct else ""
     bb = f"BB {d.best_before:%Y-%m-%d} ({d.days_left}d)" if d.best_before else "no BB date listed"
     cnt = f"{d.count}" if d.count_known else f"{d.count}?"
-    return f"• {flavor}${d.price:.2f} for {cnt} = ${d.per_bar:.2f}/bar{disc} · {bb} · {reason}"
+    fx = f" (US${d.native_price:.2f} + shipping/duty)" if d.currency == "USD" else ""
+    return f"• {flavor}${d.price:.2f}{fx} for {cnt} = ${d.per_bar:.2f}/bar{disc} · {bb} · {reason}"
 
 
 def build_messages(alerts: list[tuple[Deal, str]], max_msgs: int) -> list[dict]:
@@ -310,6 +339,11 @@ def run(args: argparse.Namespace) -> int:
 
     today = today_in(cfg["dates"]["timezone"])
     session = make_session(cfg)
+    if any(s.get("currency", "CAD") != "CAD" for s in cfg["stores"]):
+        usd_cad = fetch_usd_cad(session, cfg)
+        for s in cfg["stores"]:
+            if s.get("currency") == "USD":
+                s["_fx_to_cad"] = usd_cad
     items: dict = state.setdefault("items", {})
     all_deals: list[Deal] = []
     store_status: dict[str, dict] = {}
@@ -479,6 +513,7 @@ def write_snapshot(path: Path, deals: list[Deal], items: dict, store_status: dic
         rows.append({
             "key": d.key, "store": d.store, "product": d.product_title, "flavor": d.flavor,
             "url": d.url, "image": d.image, "in_stock": d.in_stock,
+            "currency": d.currency, "native_price": d.native_price if d.currency != "CAD" else None,
             "price": d.price, "compare_at": d.compare_at, "discount_pct": d.discount_pct,
             "count": d.count, "count_known": d.count_known, "per_bar": d.per_bar,
             "best_before": d.best_before.isoformat() if d.best_before else None,

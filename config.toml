@@ -14,7 +14,7 @@ assume_count_if_unknown = 1     # bar count used when the title doesn't state on
 min_interval_minutes = 60       # refuse to poll more often than this (use --force to override)
 request_timeout_seconds = 20
 delay_between_requests_seconds = 1.5
-max_pages = 20                  # safety cap on ?page= pagination per store
+max_pages = 60                  # safety cap on ?page= pagination (Vitamart needs ~41)
 page_size = 250                 # Shopify's max for products.json
 user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
 
@@ -27,6 +27,11 @@ ntfy_server = "https://ntfy.sh" # override with NTFY_SERVER env var if self-host
 timezone = "America/Toronto"
 # For all-numeric dates like 03/04/26 where both parts are <= 12. "MDY" or "DMY".
 numeric_order = "MDY"
+
+[fx]
+# US stores are converted to CAD with the Bank of Canada's daily rate; this is only used
+# if that lookup fails. Converted prices exclude cross-border shipping, duty and brokerage.
+usd_cad_fallback = 1.37
 
 [state]
 path = "state/seen.json"
@@ -54,7 +59,12 @@ include = ["bar", "bars", "snack", "snacks", "cookie", "cookies", "wafer", "wafe
            "truffles", "whoopie", "whoopies", "sweet roll", "sweet rolls", "meat stick",
            "meat sticks", "square", "squares", "gems", "m&m's", "almonds", "edamame",
            "trail mix", "cake", "cakes", "cheesecake", "rice crispy", "krispies", "bark",
-           "fudge", "chocolate", "chocolates", "beanz", "clean beans"]
+           "fudge", "beanz", "clean beans", "treat", "treats", "cup", "nuts", "krisp", "dippers",
+           "wheyfer", "gourganes", "broadbeanz", "pepperoni", "beef sticks", "meat snacks", "pie", "pies",
+           # French (Protein à Rabais)
+           "barre", "barres", "collation", "collations", "biscuit", "biscuits", "croustilles",
+           "bouchées", "gaufrette", "gaufrettes", "craquelins", "bretzel", "bretzels",
+           "beigne", "beignes", "edamames", "fèves", "bonbons", "jujubes"]
 snack_types = ["protein bars", "bars", "protein snacks", "snacks", "snack",
                "low carb snacks", "protein bars & snacks", "edible", "functional food"]
 exclude = [
@@ -65,7 +75,7 @@ exclude = [
   "sauce", "sauces", "syrup", "dressing", "dip", "mayo", "mayonnaise", "ketchup",
   "mustard", "jam", "spread", "spreads", "spray", "oil", "spice", "spices", "seasoning",
   # meals / staples (not snacks)
-  "hot cereal", "protein cereal", "oatmeal", "porridge", "cream of rice", "creamy rice",
+  "hot cereal", "protein cereal", "protein oatmeal", "instant oatmeal", "oatmeal packets", "porridge", "cream of rice", "creamy rice",
   "konjac", "tortillas", "street taco", "bread", "loaf", "mac and cheese", "mac & cheese",
   "pizza", "cake mix", "pancake mix",
   # supplements / gear
@@ -79,6 +89,32 @@ exclude = [
   # baking / pantry / misc
   "mix", "sweetener", "sugar replacement", "pudding", "pasta", "mash", "wraps", "oats",
   "broth", "lemonade", "hot chocolate", "mac", "grip", "grips", "collar", "collars",
+  "t-shirt", "shirt", "hoodie", "cap", "chocolat chaud",
+  "soap", "deodorant", "container", "containers", "storage", "candle", "candles", "mold",
+  "mould", "noodle", "noodles", "soup", "baking cups", "pick up only", "pickup only",
+  # French equivalents
+  "boisson", "boissons", "sirop", "vinaigrette", "tartinade", "huile", "épices",
+  "assaisonnement", "poudre", "café", "repas", "pâtes", "pouding", "puddings", "déjeuners",
+  "mélange", "mélanges", "céréale", "céréales", "bouillons", "vitamine", "collagène",
+  "gainer", "certificat", "smoothies", "farine", "pain", "riz", "gruau", "macaroni",
+  "confitures", "curcuma", "électrolytes", "créatine", "thé", "vignaigrettes", "linguini",
+  "lasagne", "cheveux d'ange", "slush", "mocktail", "bubble tea", "freeze pops", "juicy protein",
+  # personal care / household (Vitamart, Nutrition House)
+  "shampoo", "conditioner", "facial", "scrub", "body", "cleansing", "laundry", "stain",
+  "lip balm", "balm", "nail polish", "eye cream", "face wash", "serum", "toner", "roll-on",
+  "insect bites", "bites + stings", "cocoa butter", "moisture bar", "bath", "sticker", "die cut",
+  "push up", "push-up", "pull up", "pull-up", "door gym",
+  # supplements that look like candy or snacks
+  "multi", "multivitamins", "omega", "dha", "coq10", "magnesium", "zinc", "turmeric",
+  "mushroom", "shroom", "elderberry", "sambucus", "cranberry", "propolis", "liver", "laxative",
+  "sleep", "sleepy", "calm", "immune", "mood", "colostrum", "shilajit", "screen eyes",
+  "superfruits", "supergreens", "cytogreens", "preworkout", "pre workout", "gains candy",
+  "skull candy", "nose candy", "smelling salts", "rock candy", "herbal candy", "cough", "throat",
+  "chewable", "tincture", "extract", "liquid", "concentrate", "tart cherry", "mg", "ml",
+  "stevia", "xylitol", "allulose", "erythritol", "flax", "willow", "pine bark", "fungal",
+  "tea", "decaf", "kernels", "kernals", "popping", "make your own", "diy", "shakes",
+  "milkshake", "rice cereal", "real carbs", "a:cuts", "stadium", "menstrual", "with lid",
+  "homeopathic", "bites+stings", "shakers",
 ]
 
 # --- Stores -------------------------------------------------------------------
@@ -100,3 +136,91 @@ base_url = "https://chicksandmuscles.ca"
 [[stores]]
 name = "Top Nutrition & Fitness"
 base_url = "https://topnutritionandfitness.com"
+
+# --- Added from the Sept 2026 research reports --------------------------------------
+# Canadian (CAD), all confirmed via /meta.json to ship within Canada.
+[[stores]]
+name = "Fitshop.ca"
+base_url = "https://fitshop.ca"
+
+[[stores]]
+name = "Protein Depot"
+base_url = "https://www.proteindepot.com"   # same store as proteindepotcanada.com
+
+[[stores]]
+name = "Supplements Canada"
+base_url = "https://supplementscanada.com"
+
+[[stores]]
+name = "Canadian Protein"
+base_url = "https://canadianprotein.com"
+
+[[stores]]
+name = "Vitamart"
+base_url = "https://www.vitamart.ca"
+
+[[stores]]
+name = "2GuysOnline"
+base_url = "https://www.2guysonline.ca"
+# General grocery liquidator (regular chips, candy, household goods), so only protein items.
+require_words = ["protein", "protéine", "protéiné", "protéinée"]
+
+[[stores]]
+name = "Nutrition House"
+base_url = "https://nutritionhouse.com"
+
+[[stores]]
+name = "Believe Supplements"
+base_url = "https://believesupplements.com"
+
+[[stores]]
+name = "Protein à Rabais"
+base_url = "https://www.proteinarabais.com"
+platform = "proteinarabais"   # custom site, read by custom_stores.py
+# categories = ["liquidation", "barres-de-proteines", "chocolat", "epicerie-et-collations"]
+
+# US (prices in USD, converted to CAD). All list Canada in their ships-to countries.
+[[stores]]
+name = "Best Price Nutrition (US)"
+base_url = "https://www.bestpricenutrition.com"
+currency = "USD"
+
+[[stores]]
+name = "Supplement Warehouse (US)"
+base_url = "https://supplementwarehouse.com"
+currency = "USD"
+
+[[stores]]
+name = "NutriCartel (US)"
+base_url = "https://nutricartel.com"
+currency = "USD"
+
+[[stores]]
+name = "PoorBoy Supplements (US)"
+base_url = "https://poorboysupplements.com"
+currency = "USD"
+
+[[stores]]
+name = "Dive Bar (US)"
+base_url = "https://divebarnutrition.com"
+currency = "USD"
+collections = ["canada"]   # its clearance menu only ships to the lower 48 US states
+
+# --- Added after checking the non-Shopify and "not checked" stores ---------------------
+[[stores]]
+name = "Well.ca"
+base_url = "https://well.ca"
+platform = "wellca"   # custom reader; its paging is broken, so ~95% of clearance and ~40% of bars are reachable
+# categories = ["fitness-protein-clearance_6664", "protein-bars-snacks_1106"]
+
+[[stores]]
+name = "Supplements Direct"
+base_url = "https://supplementsdirect.ca"   # Vancouver; WooCommerce
+platform = "woocommerce"
+categories = ["protein-bars", "healthy-snacks"]
+# Storefront currently says "Site is undergoing maintenance"; the reader skips it until that's gone.
+
+[[stores]]
+name = "Nutrition Depot (US)"
+base_url = "https://ndonline.com"   # Houston, TX; Shopify ships-to list includes Canada
+currency = "USD"
