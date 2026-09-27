@@ -37,7 +37,7 @@
     },
     "NutriCartel (US)": {
       "fail_streak": 0,
-      "usual_products": 2385,
+      "usual_products": 2386,
       "warned": false
     },
     "Nutrition Depot (US)": {
@@ -47,7 +47,7 @@
     },
     "Nutrition House": {
       "fail_streak": 0,
-      "usual_products": 4952,
+      "usual_products": 4953,
       "warned": false
     },
     "PoorBoy Supplements (US)": {
@@ -72,7 +72,7 @@
     },
     "SupplementSource": {
       "fail_streak": 0,
-      "usual_products": 847,
+      "usual_products": 846,
       "warned": false
     },
     "Supplements Canada": {
@@ -102,7 +102,7 @@
     },
     "Well.ca": {
       "fail_streak": 0,
-      "usual_products": 322,
+      "usual_products": 324,
       "warned": false
     }
   },
@@ -15743,7 +15743,7 @@
       "per_bar": 1.78,
       "prev_price": 19.99,
       "price": 24.99,
-      "price_changed_at": "2026-09-27T19:01:11+00:00",
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest\u00ae Mini Bars",
       "url": "https://www.proteinarabais.com/quest-mini-bars"
@@ -15803,7 +15803,7 @@
       "per_bar": 1.99,
       "prev_price": 39.99,
       "price": 1.99,
-      "price_changed_at": "2026-09-27T19:01:11+00:00",
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Bars",
       "url": "https://www.proteinarabais.com/quest-bars"
@@ -18273,7 +18273,7 @@
       "per_bar": 2.15,
       "prev_price": 1.99,
       "price": 2.15,
-      "price_changed_at": "2026-09-27T19:01:11+00:00",
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Protein Cookie",
       "url": "https://www.proteinarabais.com/quest-protein-cookie"
@@ -21551,7 +21551,7 @@
       "count": 12,
       "first_seen": "2026-09-26T23:21:32+00:00",
       "flavor": "Chocolate Chip Cookie Dough",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 3.33,
       "prev_price": null,
@@ -22218,7 +22218,7 @@
       "count": 12,
       "first_seen": "2026-09-26T23:21:32+00:00",
       "flavor": "Creamy Crisp",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 3.33,
       "prev_price": null,
@@ -35265,7 +35265,7 @@
       "count": 2,
       "first_seen": "2026-09-26T23:21:32+00:00",
       "flavor": "High Protein Spongie Cake (2 x 16g protein)",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 4.79,
       "prev_price": null,
@@ -49346,9 +49346,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 4.06,
-      "prev_price": null,
-      "price": 48.75,
-      "price_changed_at": null,
+      "prev_price": 48.75,
+      "price": 48.74,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Herbaland Vegan Protein Gummies, 6g Protein and 12g Fibre Per Serving, Case of 12 x 50g or Case of 6 x 240g",
       "url": "https://www.vitamart.ca/products/herbaland-vegan-protein-gummies-240g?variant=47628139036843"
@@ -49361,9 +49361,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.88,
-      "prev_price": null,
-      "price": 34.61,
-      "price_changed_at": null,
+      "prev_price": 34.61,
+      "price": 34.6,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Alani Nu Protein Bars, 16g Protein, Gluten Free, Box of 12",
       "url": "https://www.vitamart.ca/products/alani-nu-protein-bars-box-of-12?variant=47547304738987"
@@ -49376,9 +49376,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.88,
-      "prev_price": null,
-      "price": 34.61,
-      "price_changed_at": null,
+      "prev_price": 34.61,
+      "price": 34.6,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Alani Nu Protein Bars, 16g Protein, Gluten Free, Box of 12",
       "url": "https://www.vitamart.ca/products/alani-nu-protein-bars-box-of-12?variant=47547304771755"
@@ -49391,9 +49391,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.88,
-      "prev_price": null,
-      "price": 34.61,
-      "price_changed_at": null,
+      "prev_price": 34.61,
+      "price": 34.6,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Alani Nu Protein Bars, 16g Protein, Gluten Free, Box of 12",
       "url": "https://www.vitamart.ca/products/alani-nu-protein-bars-box-of-12?variant=47547304804523"
@@ -49406,9 +49406,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.88,
-      "prev_price": null,
-      "price": 34.61,
-      "price_changed_at": null,
+      "prev_price": 34.61,
+      "price": 34.6,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Alani Nu Protein Bars, 16g Protein, Gluten Free, Box of 12",
       "url": "https://www.vitamart.ca/products/alani-nu-protein-bars-box-of-12?variant=47547304837291"
@@ -49483,7 +49483,7 @@
       "count": 12,
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "Bears - Peach",
-      "in_stock": false,
+      "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.77,
       "prev_price": null,
@@ -50635,9 +50635,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.12,
-      "prev_price": null,
-      "price": 25.42,
-      "price_changed_at": null,
+      "prev_price": 25.42,
+      "price": 25.41,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "SimplyProtein Stacked Bars 45g, Layered Plant Protein Bars in Fudgy Almond Crunch and Salted Caramel Crisp",
       "url": "https://www.vitamart.ca/products/simplyprotein-stacked-bars-45g?variant=47584047759531"
@@ -50852,9 +50852,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.71,
-      "prev_price": null,
-      "price": 32.49,
-      "price_changed_at": null,
+      "prev_price": 32.49,
+      "price": 32.48,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Thunderbird Real Food Bar, Dates Nuts and Fruit, No Added Sugar, No Protein Isolates, Gluten Free, Box of 12 Bars, 48g Each",
       "url": "https://www.vitamart.ca/products/thunderbird-real-food-bar?variant=47584661668011"
@@ -50867,9 +50867,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.71,
-      "prev_price": null,
-      "price": 32.49,
-      "price_changed_at": null,
+      "prev_price": 32.49,
+      "price": 32.48,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Thunderbird Real Food Bar, Dates Nuts and Fruit, No Added Sugar, No Protein Isolates, Gluten Free, Box of 12 Bars, 48g Each",
       "url": "https://www.vitamart.ca/products/thunderbird-real-food-bar?variant=47584661700779"
@@ -50895,9 +50895,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.71,
-      "prev_price": null,
-      "price": 32.49,
-      "price_changed_at": null,
+      "prev_price": 32.49,
+      "price": 32.48,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Thunderbird Real Food Bar, Dates Nuts and Fruit, No Added Sugar, No Protein Isolates, Gluten Free, Box of 12 Bars, 48g Each",
       "url": "https://www.vitamart.ca/products/thunderbird-real-food-bar?variant=47584661766315"
@@ -50910,9 +50910,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.71,
-      "prev_price": null,
-      "price": 32.49,
-      "price_changed_at": null,
+      "prev_price": 32.49,
+      "price": 32.48,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Thunderbird Real Food Bar, Dates Nuts and Fruit, No Added Sugar, No Protein Isolates, Gluten Free, Box of 12 Bars, 48g Each",
       "url": "https://www.vitamart.ca/products/thunderbird-real-food-bar?variant=47584661799083"
@@ -50925,9 +50925,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.71,
-      "prev_price": null,
-      "price": 32.49,
-      "price_changed_at": null,
+      "prev_price": 32.49,
+      "price": 32.48,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Thunderbird Real Food Bar, Dates Nuts and Fruit, No Added Sugar, No Protein Isolates, Gluten Free, Box of 12 Bars, 48g Each",
       "url": "https://www.vitamart.ca/products/thunderbird-real-food-bar?variant=47584661831851"
@@ -50940,9 +50940,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.71,
-      "prev_price": null,
-      "price": 32.49,
-      "price_changed_at": null,
+      "prev_price": 32.49,
+      "price": 32.48,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Thunderbird Real Food Bar, Dates Nuts and Fruit, No Added Sugar, No Protein Isolates, Gluten Free, Box of 12 Bars, 48g Each",
       "url": "https://www.vitamart.ca/products/thunderbird-real-food-bar?variant=47584661864619"
@@ -50968,9 +50968,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 2.71,
-      "prev_price": null,
-      "price": 32.49,
-      "price_changed_at": null,
+      "prev_price": 32.49,
+      "price": 32.48,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Thunderbird Real Food Bar, Dates Nuts and Fruit, No Added Sugar, No Protein Isolates, Gluten Free, Box of 12 Bars, 48g Each",
       "url": "https://www.vitamart.ca/products/thunderbird-real-food-bar?variant=47584661930155"
@@ -51350,9 +51350,9 @@
       "in_stock": true,
       "last_seen": "2026-09-27T00:47:07+00:00",
       "per_bar": 1.3,
-      "prev_price": null,
-      "price": 32.49,
-      "price_changed_at": null,
+      "prev_price": 32.49,
+      "price": 32.48,
+      "price_changed_at": "2026-09-27T22:17:28+00:00",
       "store": "Vitamart",
       "title": "Country Prime Meats Dry Pepperoni Sticks, Gluten-Free, Case of 25 x 40g",
       "url": "https://www.vitamart.ca/products/country-prime-meats-dry-pepperoni-sticks-case-25?variant=47935809650859"
@@ -54922,6 +54922,6 @@
       "url": "https://well.ca/products/pure-protein-bar-chewy-chocolate_97331.html"
     }
   },
-  "last_run": "2026-09-27T19:01:11+00:00",
+  "last_run": "2026-09-27T22:17:28+00:00",
   "version": 1
 }
