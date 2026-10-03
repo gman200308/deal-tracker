@@ -97,12 +97,12 @@
     },
     "Vitamart": {
       "fail_streak": 0,
-      "usual_products": 10546,
+      "usual_products": 10549,
       "warned": false
     },
     "Well.ca": {
       "fail_streak": 0,
-      "usual_products": 332,
+      "usual_products": 334,
       "warned": false
     }
   },
@@ -8325,10 +8325,12 @@
       "count": 12,
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "1 Box (12 Bars) / Chocolate Sea Salt Brownie",
-      "in_stock": false,
+      "in_stock": true,
       "last_seen": "2026-10-03T05:25:27+00:00",
-      "per_bar": 4.71,
-      "price": 56.57,
+      "per_bar": 4.75,
+      "prev_price": 56.57,
+      "price": 56.97,
+      "price_changed_at": "2026-10-03T23:08:09+00:00",
       "store": "NutriCartel (US)",
       "title": "Transparent Labs Protein+ Bar",
       "url": "https://nutricartel.com/products/transparent-labs-protein-bar?variant=47419253850354"
@@ -8441,7 +8443,7 @@
       "count": 12,
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "1 Box (12 Bars) / Chocolate Sea Salt Brownie (Best by 5/26)",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-10-03T05:25:27+00:00",
       "per_bar": 3.32,
       "prev_price": 39.71,
@@ -15101,7 +15103,7 @@
       "per_bar": 3.55,
       "prev_price": 44.99,
       "price": 3.55,
-      "price_changed_at": "2026-10-03T19:58:36+00:00",
+      "price_changed_at": "2026-10-03T23:08:09+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Peanut Butter Cups \u2013 Chocolat & Beurre d\u2019Arachide",
       "url": "https://www.proteinarabais.com/quest-peanut-butter-cups-chocolat-et-beurre-darachide"
@@ -15779,7 +15781,7 @@
       "per_bar": 1.78,
       "prev_price": 19.99,
       "price": 24.99,
-      "price_changed_at": "2026-10-03T19:58:36+00:00",
+      "price_changed_at": "2026-10-03T23:08:09+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest\u00ae Mini Bars",
       "url": "https://www.proteinarabais.com/quest-mini-bars"
@@ -15839,7 +15841,7 @@
       "per_bar": 1.99,
       "prev_price": 39.99,
       "price": 1.99,
-      "price_changed_at": "2026-10-03T19:58:36+00:00",
+      "price_changed_at": "2026-10-03T23:08:09+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Bars",
       "url": "https://www.proteinarabais.com/quest-bars"
@@ -18324,7 +18326,7 @@
       "per_bar": 2.15,
       "prev_price": 1.99,
       "price": 2.15,
-      "price_changed_at": "2026-10-03T19:58:36+00:00",
+      "price_changed_at": "2026-10-03T23:08:09+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Protein Cookie",
       "url": "https://www.proteinarabais.com/quest-protein-cookie"
@@ -21568,7 +21570,7 @@
       "count": 1,
       "first_seen": "2026-09-26T23:21:32+00:00",
       "flavor": "Chocolate Chip Cookie Dough",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-10-03T05:25:27+00:00",
       "per_bar": 2.99,
       "prev_price": null,
@@ -30438,6 +30440,21 @@
       "title": "Built GF Protein Bars & Puffs (1 Bar)",
       "url": "https://topnutritionandfitness.com/products/built-protein-bar-puffs-1-bar?variant=50533197217866"
     },
+    "Top Nutrition & Fitness:4898366095434:67611049623626": {
+      "best_before": null,
+      "count": 1,
+      "first_seen": "2026-10-03T23:08:09+00:00",
+      "flavor": "Mocha Chunk *NEW*",
+      "in_stock": true,
+      "last_seen": "2026-10-03T23:08:09+00:00",
+      "per_bar": 5.99,
+      "prev_price": null,
+      "price": 5.99,
+      "price_changed_at": null,
+      "store": "Top Nutrition & Fitness",
+      "title": "Built GF Protein Bars & Puffs (1 Bar)",
+      "url": "https://topnutritionandfitness.com/products/built-protein-bar-puffs-1-bar?variant=67611049623626"
+    },
     "Top Nutrition & Fitness:6562732113994:39279498723402": {
       "best_before": null,
       "count": 1,
@@ -37529,6 +37546,21 @@
       "store": "Top Nutrition & Fitness",
       "title": "Built GF Protein Bars & Puffs (1 Box of 12)",
       "url": "https://topnutritionandfitness.com/products/built-protein-bar-puffs-1-box-of-12?variant=50533195546698"
+    },
+    "Top Nutrition & Fitness:7912742551626:67611049295946": {
+      "best_before": null,
+      "count": 12,
+      "first_seen": "2026-10-03T23:08:09+00:00",
+      "flavor": "Mocha Chunk *NEW*",
+      "in_stock": true,
+      "last_seen": "2026-10-03T23:08:09+00:00",
+      "per_bar": 5.83,
+      "prev_price": null,
+      "price": 69.99,
+      "price_changed_at": null,
+      "store": "Top Nutrition & Fitness",
+      "title": "Built GF Protein Bars & Puffs (1 Box of 12)",
+      "url": "https://topnutritionandfitness.com/products/built-protein-bar-puffs-1-box-of-12?variant=67611049295946"
     },
     "Top Nutrition & Fitness:7914821156938:42033887281226": {
       "best_before": null,
@@ -51750,7 +51782,7 @@
       "count": 12,
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "Peanut Butter & Jelly",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-10-03T05:25:27+00:00",
       "per_bar": 2.69,
       "prev_price": 32.23,
@@ -55850,11 +55882,11 @@
       "first_seen": "2026-10-02T13:55:47+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-10-02T13:55:47+00:00",
+      "last_seen": "2026-10-03T23:08:09+00:00",
       "per_bar": 3.75,
-      "prev_price": null,
-      "price": 44.97,
-      "price_changed_at": null,
+      "prev_price": 44.97,
+      "price": 44.99,
+      "price_changed_at": "2026-10-03T23:08:09+00:00",
       "store": "Well.ca",
       "title": "Smarter Snacks Protein Waffle Double Chocolate Cream (12 x 55 g)",
       "url": "https://well.ca/products/smarter-snacks-protein-waffle-double_362691.html"
@@ -56310,6 +56342,6 @@
       "url": "https://well.ca/products/pure-protein-bar-chewy-chocolate_97331.html"
     }
   },
-  "last_run": "2026-10-03T19:58:36+00:00",
+  "last_run": "2026-10-03T23:08:09+00:00",
   "version": 1
 }
