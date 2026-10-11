@@ -72,7 +72,7 @@
     },
     "SupplementSource": {
       "fail_streak": 0,
-      "usual_products": 859,
+      "usual_products": 857,
       "warned": false
     },
     "Supplements Canada": {
@@ -97,12 +97,12 @@
     },
     "Vitamart": {
       "fail_streak": 0,
-      "usual_products": 11017,
+      "usual_products": 11022,
       "warned": false
     },
     "Well.ca": {
       "fail_streak": 0,
-      "usual_products": 325,
+      "usual_products": 323,
       "warned": false
     }
   },
@@ -15134,7 +15134,7 @@
       "per_bar": 3.55,
       "prev_price": 44.99,
       "price": 3.55,
-      "price_changed_at": "2026-10-11T13:02:01+00:00",
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Peanut Butter Cups \u2013 Chocolat & Beurre d\u2019Arachide",
       "url": "https://www.proteinarabais.com/quest-peanut-butter-cups-chocolat-et-beurre-darachide"
@@ -15812,7 +15812,7 @@
       "per_bar": 1.78,
       "prev_price": 19.99,
       "price": 24.99,
-      "price_changed_at": "2026-10-11T13:02:01+00:00",
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest\u00ae Mini Bars",
       "url": "https://www.proteinarabais.com/quest-mini-bars"
@@ -15872,7 +15872,7 @@
       "per_bar": 1.99,
       "prev_price": 39.99,
       "price": 1.99,
-      "price_changed_at": "2026-10-11T13:02:01+00:00",
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Bars",
       "url": "https://www.proteinarabais.com/quest-bars"
@@ -26252,12 +26252,12 @@
       "flavor": "Great White Crunch",
       "in_stock": true,
       "last_seen": "2026-10-11T05:57:05+00:00",
-      "per_bar": 2.5,
-      "prev_price": null,
-      "price": 2.5,
-      "price_changed_at": null,
+      "per_bar": 2.25,
+      "prev_price": 2.5,
+      "price": 2.25,
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
-      "title": "Allmax Cheat Bar 58g / Single Bar *HOT BUY*",
+      "title": "Allmax Cheat Bar 58g / Single Bar *WEEKEND FLASH SALE*",
       "url": "https://supplementscanada.com/products/allmax-cheat-bar-58g-single-bar?variant=55930326253641"
     },
     "Supplements Canada:15674927349833:55930326286409": {
@@ -26267,12 +26267,12 @@
       "flavor": "Nuts Over Chocolate",
       "in_stock": true,
       "last_seen": "2026-10-11T05:57:05+00:00",
-      "per_bar": 2.5,
-      "prev_price": null,
-      "price": 2.5,
-      "price_changed_at": null,
+      "per_bar": 2.25,
+      "prev_price": 2.5,
+      "price": 2.25,
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
-      "title": "Allmax Cheat Bar 58g / Single Bar *HOT BUY*",
+      "title": "Allmax Cheat Bar 58g / Single Bar *WEEKEND FLASH SALE*",
       "url": "https://supplementscanada.com/products/allmax-cheat-bar-58g-single-bar?variant=55930326286409"
     },
     "Supplements Canada:15696519528521:55962296123465": {
@@ -26312,12 +26312,12 @@
       "flavor": "Chocolate Chip Cookie Dough",
       "in_stock": true,
       "last_seen": "2026-10-11T05:57:05+00:00",
-      "per_bar": 2.94,
-      "prev_price": null,
-      "price": 2.94,
-      "price_changed_at": null,
+      "per_bar": 2.25,
+      "prev_price": 2.94,
+      "price": 2.25,
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
-      "title": "Allmax Hexapro Protein Bar 54g / Single Bar",
+      "title": "Allmax Hexapro Protein Bar 54g / Single Bar *HOT BUY*",
       "url": "https://supplementscanada.com/products/allmax-hexapro-protein-bar-54g-single-bar?variant=55962422378569"
     },
     "Supplements Canada:15696684449865:55962422411337": {
@@ -26327,12 +26327,12 @@
       "flavor": "Chocolate Peanut Butter Cup",
       "in_stock": true,
       "last_seen": "2026-10-11T05:57:05+00:00",
-      "per_bar": 2.94,
-      "prev_price": null,
-      "price": 2.94,
-      "price_changed_at": null,
+      "per_bar": 2.25,
+      "prev_price": 2.94,
+      "price": 2.25,
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
-      "title": "Allmax Hexapro Protein Bar 54g / Single Bar",
+      "title": "Allmax Hexapro Protein Bar 54g / Single Bar *HOT BUY*",
       "url": "https://supplementscanada.com/products/allmax-hexapro-protein-bar-54g-single-bar?variant=55962422411337"
     },
     "Supplements Canada:15790017871945:56101647286345": {
@@ -26747,10 +26747,10 @@
       "flavor": "Double Chocolate Brownie",
       "in_stock": true,
       "last_seen": "2026-10-11T05:57:05+00:00",
-      "per_bar": 37.99,
-      "prev_price": null,
-      "price": 37.99,
-      "price_changed_at": null,
+      "per_bar": 31.89,
+      "prev_price": 37.99,
+      "price": 31.89,
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
       "title": "Iron Vegan Sprouted Protein Bar - 12 x 64 Grams *DOOR CRASHER*",
       "url": "https://supplementscanada.com/products/iron-vegan-sprouted-protein-bar?variant=40948627669065"
@@ -26762,10 +26762,10 @@
       "flavor": "Peanut Chocolate Chip",
       "in_stock": true,
       "last_seen": "2026-10-11T05:57:05+00:00",
-      "per_bar": 37.99,
-      "prev_price": null,
-      "price": 37.99,
-      "price_changed_at": null,
+      "per_bar": 31.99,
+      "prev_price": 37.99,
+      "price": 31.99,
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
       "title": "Iron Vegan Sprouted Protein Bar - 12 x 64 Grams *DOOR CRASHER*",
       "url": "https://supplementscanada.com/products/iron-vegan-sprouted-protein-bar?variant=40948627701833"
@@ -26777,10 +26777,10 @@
       "flavor": "Sweet n Salty Caramel",
       "in_stock": true,
       "last_seen": "2026-10-11T05:57:05+00:00",
-      "per_bar": 37.99,
-      "prev_price": null,
-      "price": 37.99,
-      "price_changed_at": null,
+      "per_bar": 31.99,
+      "prev_price": 37.99,
+      "price": 31.99,
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
       "title": "Iron Vegan Sprouted Protein Bar - 12 x 64 Grams *DOOR CRASHER*",
       "url": "https://supplementscanada.com/products/iron-vegan-sprouted-protein-bar?variant=54709647310921"
@@ -27493,12 +27493,12 @@
       "flavor": "Berry Punch",
       "in_stock": true,
       "last_seen": "2026-10-11T05:57:05+00:00",
-      "per_bar": 5.49,
-      "prev_price": null,
-      "price": 5.49,
-      "price_changed_at": null,
+      "per_bar": 4.99,
+      "prev_price": 5.49,
+      "price": 4.99,
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
-      "title": "Protein Candy - 55g *HOT BUY!*",
+      "title": "Protein Candy - 55g *WEEKEND FLASH SALE*",
       "url": "https://supplementscanada.com/products/protein-candy-55g?variant=41653462433865"
     },
     "Supplements Canada:7297180794953:55657284894793": {
@@ -27508,12 +27508,12 @@
       "flavor": "Sour Watermelon *NEW*",
       "in_stock": true,
       "last_seen": "2026-10-11T05:57:05+00:00",
-      "per_bar": 5.49,
-      "prev_price": null,
-      "price": 5.49,
-      "price_changed_at": null,
+      "per_bar": 4.99,
+      "prev_price": 5.49,
+      "price": 4.99,
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
-      "title": "Protein Candy - 55g *HOT BUY!*",
+      "title": "Protein Candy - 55g *WEEKEND FLASH SALE*",
       "url": "https://supplementscanada.com/products/protein-candy-55g?variant=55657284894793"
     },
     "Supplements Canada:7297180794953:55703849795657": {
@@ -27523,12 +27523,12 @@
       "flavor": "Classic Fruit",
       "in_stock": true,
       "last_seen": "2026-10-11T05:57:05+00:00",
-      "per_bar": 5.49,
-      "prev_price": null,
-      "price": 5.49,
-      "price_changed_at": null,
+      "per_bar": 4.99,
+      "prev_price": 5.49,
+      "price": 4.99,
+      "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
-      "title": "Protein Candy - 55g *HOT BUY!*",
+      "title": "Protein Candy - 55g *WEEKEND FLASH SALE*",
       "url": "https://supplementscanada.com/products/protein-candy-55g?variant=55703849795657"
     },
     "Supplements Canada:7351768547401:41824548192329": {
@@ -38155,7 +38155,7 @@
       "count": 12,
       "first_seen": "2026-09-26T23:21:32+00:00",
       "flavor": "Cookie Commotion",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-10-11T05:57:05+00:00",
       "per_bar": 5.42,
       "prev_price": null,
@@ -57032,6 +57032,6 @@
       "url": "https://well.ca/products/pure-protein-bar-chewy-chocolate_97331.html"
     }
   },
-  "last_run": "2026-10-11T13:02:01+00:00",
+  "last_run": "2026-10-11T18:08:43+00:00",
   "version": 1
 }
