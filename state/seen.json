@@ -2,7 +2,7 @@
   "health": {
     "2GuysOnline": {
       "fail_streak": 0,
-      "usual_products": 878,
+      "usual_products": 877,
       "warned": false
     },
     "Believe Supplements": {
@@ -37,7 +37,7 @@
     },
     "NutriCartel (US)": {
       "fail_streak": 0,
-      "usual_products": 2423,
+      "usual_products": 2424,
       "warned": false
     },
     "Nutrition Depot (US)": {
@@ -97,12 +97,12 @@
     },
     "Vitamart": {
       "fail_streak": 0,
-      "usual_products": 11488,
+      "usual_products": 11508,
       "warned": false
     },
     "Well.ca": {
       "fail_streak": 0,
-      "usual_products": 322,
+      "usual_products": 320,
       "warned": false
     }
   },
@@ -15372,7 +15372,7 @@
       "per_bar": 3.55,
       "prev_price": 44.99,
       "price": 3.55,
-      "price_changed_at": "2026-10-24T01:39:48+00:00",
+      "price_changed_at": "2026-10-24T07:23:05+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Peanut Butter Cups \u2013 Chocolat & Beurre d\u2019Arachide",
       "url": "https://www.proteinarabais.com/quest-peanut-butter-cups-chocolat-et-beurre-darachide"
@@ -16024,7 +16024,7 @@
       "per_bar": 1.75,
       "prev_price": 1.99,
       "price": 20.99,
-      "price_changed_at": "2026-10-24T01:39:48+00:00",
+      "price_changed_at": "2026-10-24T07:23:05+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Carb Killa barre de prot\u00e9ine",
       "url": "https://www.proteinarabais.com/carb-killa-barre-de-proteine"
@@ -16054,7 +16054,7 @@
       "per_bar": 1.78,
       "prev_price": 19.99,
       "price": 24.99,
-      "price_changed_at": "2026-10-24T01:39:48+00:00",
+      "price_changed_at": "2026-10-24T07:23:05+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest\u00ae Mini Bars",
       "url": "https://www.proteinarabais.com/quest-mini-bars"
@@ -16114,7 +16114,7 @@
       "per_bar": 1.99,
       "prev_price": 39.99,
       "price": 1.99,
-      "price_changed_at": "2026-10-24T01:39:48+00:00",
+      "price_changed_at": "2026-10-24T07:23:05+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Bars",
       "url": "https://www.proteinarabais.com/quest-bars"
@@ -25267,7 +25267,7 @@
       "count": 18,
       "first_seen": "2026-10-07T15:36:29+00:00",
       "flavor": "Chocolate Peanut Butter",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-10-24T01:39:48+00:00",
       "per_bar": 1.94,
       "prev_price": null,
@@ -25930,7 +25930,7 @@
       "price": 3.0,
       "price_changed_at": "2026-10-23T13:33:01+00:00",
       "store": "Supplements Canada",
-      "title": "Redefine Foods Oatmeal Protein Pie - 76 Gram / Single - Original Flavour *FRIDAY FLASH*",
+      "title": "Redefine Foods Oatmeal Protein Pie - 76 Gram / Single - Original Flavour *FRIDAY FLASH EXTENDED *",
       "url": "https://supplementscanada.com/products/redefine-foods-oatmeal-protein-pie-original-76-gram-single?variant=54733572177993"
     },
     "Supplements Canada:15408784277577:54785708851273": {
@@ -26140,7 +26140,7 @@
       "price": 46.0,
       "price_changed_at": "2026-10-23T13:33:01+00:00",
       "store": "Supplements Canada",
-      "title": "Built Bar SOUR Puff 12 x 41 Grams / Box * FRIDAY FLASH*",
+      "title": "Built Bar SOUR Puff 12 x 41 Grams / Box *FRIDAY FLASH EXTENDED *",
       "url": "https://supplementscanada.com/products/built-sour-puff-bar-12-x-40-49-grams?variant=55373099270217"
     },
     "Supplements Canada:15447657644105:55373099302985": {
@@ -26155,7 +26155,7 @@
       "price": 46.0,
       "price_changed_at": "2026-10-23T13:33:01+00:00",
       "store": "Supplements Canada",
-      "title": "Built Bar SOUR Puff 12 x 41 Grams / Box * FRIDAY FLASH*",
+      "title": "Built Bar SOUR Puff 12 x 41 Grams / Box *FRIDAY FLASH EXTENDED *",
       "url": "https://supplementscanada.com/products/built-sour-puff-bar-12-x-40-49-grams?variant=55373099302985"
     },
     "Supplements Canada:15447917002825:55373404930121": {
@@ -26701,12 +26701,12 @@
       "flavor": "Chocolate Cream Filling",
       "in_stock": true,
       "last_seen": "2026-10-24T01:39:48+00:00",
-      "per_bar": 2.89,
-      "prev_price": null,
-      "price": 2.89,
-      "price_changed_at": null,
+      "per_bar": 2.75,
+      "prev_price": 2.89,
+      "price": 2.75,
+      "price_changed_at": "2026-10-24T07:23:05+00:00",
       "store": "Supplements Canada",
-      "title": "Smarter Snacks Protein Waffles 50 Gram / Single *HOT BUY*",
+      "title": "Smarter Snacks Protein Waffles 50 Gram / Single *HOT HALLOWEEN SALE *",
       "url": "https://supplementscanada.com/products/smarter-snacks-protein-waffles-50-gram-single?variant=55772523724873"
     },
     "Supplements Canada:15579521024073:55772523757641": {
@@ -26716,12 +26716,12 @@
       "flavor": "Hazelnut Chocolate Cream Filling",
       "in_stock": true,
       "last_seen": "2026-10-24T01:39:48+00:00",
-      "per_bar": 2.89,
-      "prev_price": null,
-      "price": 2.89,
-      "price_changed_at": null,
+      "per_bar": 2.75,
+      "prev_price": 2.89,
+      "price": 2.75,
+      "price_changed_at": "2026-10-24T07:23:05+00:00",
       "store": "Supplements Canada",
-      "title": "Smarter Snacks Protein Waffles 50 Gram / Single *HOT BUY*",
+      "title": "Smarter Snacks Protein Waffles 50 Gram / Single *HOT HALLOWEEN SALE *",
       "url": "https://supplementscanada.com/products/smarter-snacks-protein-waffles-50-gram-single?variant=55772523757641"
     },
     "Supplements Canada:15579521024073:55772523823177": {
@@ -26731,12 +26731,12 @@
       "flavor": "Tiramisu Cream Filling",
       "in_stock": true,
       "last_seen": "2026-10-24T01:39:48+00:00",
-      "per_bar": 2.89,
-      "prev_price": null,
-      "price": 2.89,
-      "price_changed_at": null,
+      "per_bar": 2.75,
+      "prev_price": 2.89,
+      "price": 2.75,
+      "price_changed_at": "2026-10-24T07:23:05+00:00",
       "store": "Supplements Canada",
-      "title": "Smarter Snacks Protein Waffles 50 Gram / Single *HOT BUY*",
+      "title": "Smarter Snacks Protein Waffles 50 Gram / Single *HOT HALLOWEEN SALE *",
       "url": "https://supplementscanada.com/products/smarter-snacks-protein-waffles-50-gram-single?variant=55772523823177"
     },
     "Supplements Canada:15579533803593:55772537552969": {
@@ -26755,18 +26755,18 @@
       "url": "https://supplementscanada.com/products/smarter-snacks-protein-puffs-50-gram-bag?variant=55772537552969"
     },
     "Supplements Canada:15579533803593:55772537585737": {
-      "best_before": "2027-01-31",
+      "best_before": null,
       "count": 1,
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "Salt & Vinegar",
-      "in_stock": false,
+      "in_stock": true,
       "last_seen": "2026-10-24T01:39:48+00:00",
-      "per_bar": 3.25,
-      "prev_price": 3.0,
-      "price": 3.25,
-      "price_changed_at": "2026-10-02T23:50:21+00:00",
+      "per_bar": 3.99,
+      "prev_price": 3.25,
+      "price": 3.99,
+      "price_changed_at": "2026-10-24T07:23:05+00:00",
       "store": "Supplements Canada",
-      "title": "Smarter Snacks Protein Puffs 50 Gram / Bag *expires 01/2027",
+      "title": "Smarter Snacks Protein Puffs 50 Gram / Bag",
       "url": "https://supplementscanada.com/products/smarter-snacks-protein-puffs-50-gram-bag?variant=55772537585737"
     },
     "Supplements Canada:15601982406729:55800882036809": {
@@ -26989,12 +26989,12 @@
       "flavor": "Great White Crunch",
       "in_stock": true,
       "last_seen": "2026-10-24T01:39:48+00:00",
-      "per_bar": 2.42,
-      "prev_price": 38.89,
-      "price": 29.0,
-      "price_changed_at": "2026-10-21T01:40:44+00:00",
+      "per_bar": 2.5,
+      "prev_price": 29.0,
+      "price": 29.99,
+      "price_changed_at": "2026-10-24T07:23:05+00:00",
       "store": "Supplements Canada",
-      "title": "Allmax Cheat Bar 12 x 58g / Box * 48 HR FLASH SALE  *",
+      "title": "Allmax Cheat Bar 12 x 58g / Box *HOT HALLOWEEN SALE",
       "url": "https://supplementscanada.com/products/allmax-cheat-bar-12x58g-box?variant=55909882232905"
     },
     "Supplements Canada:15659907776585:55909882265673": {
@@ -27004,12 +27004,12 @@
       "flavor": "Nuts Over Chocolate",
       "in_stock": true,
       "last_seen": "2026-10-24T01:39:48+00:00",
-      "per_bar": 2.42,
-      "prev_price": 38.89,
-      "price": 29.0,
-      "price_changed_at": "2026-10-21T01:40:44+00:00",
+      "per_bar": 2.5,
+      "prev_price": 29.0,
+      "price": 29.99,
+      "price_changed_at": "2026-10-24T07:23:05+00:00",
       "store": "Supplements Canada",
-      "title": "Allmax Cheat Bar 12 x 58g / Box * 48 HR FLASH SALE  *",
+      "title": "Allmax Cheat Bar 12 x 58g / Box *HOT HALLOWEEN SALE",
       "url": "https://supplementscanada.com/products/allmax-cheat-bar-12x58g-box?variant=55909882265673"
     },
     "Supplements Canada:15664178364489:55916665864265": {
@@ -27421,7 +27421,7 @@
       "price": 39.99,
       "price_changed_at": "2026-10-23T13:33:01+00:00",
       "store": "Supplements Canada",
-      "title": "Barebells Protein Bar - 12 x 55g / Box  *NEW FLAVOURS *FRIDAY FLASH*",
+      "title": "Barebells Protein Bar - 12 x 55g / Box  *NEW FLAVOURS *FRIDAY FLASH EXTENDED *",
       "url": "https://supplementscanada.com/products/barebells-protein-bar-12x55g-box?variant=56132693033033"
     },
     "Supplements Canada:15804650684489:56132693065801": {
@@ -27436,7 +27436,7 @@
       "price": 39.99,
       "price_changed_at": "2026-10-23T13:33:01+00:00",
       "store": "Supplements Canada",
-      "title": "Barebells Protein Bar - 12 x 55g / Box  *NEW FLAVOURS *FRIDAY FLASH*",
+      "title": "Barebells Protein Bar - 12 x 55g / Box  *NEW FLAVOURS *FRIDAY FLASH EXTENDED *",
       "url": "https://supplementscanada.com/products/barebells-protein-bar-12x55g-box?variant=56132693065801"
     },
     "Supplements Canada:15804650684489:67676883943497": {
@@ -27451,7 +27451,7 @@
       "price": 39.99,
       "price_changed_at": "2026-10-23T13:33:01+00:00",
       "store": "Supplements Canada",
-      "title": "Barebells Protein Bar - 12 x 55g / Box  *NEW FLAVOURS *FRIDAY FLASH*",
+      "title": "Barebells Protein Bar - 12 x 55g / Box  *NEW FLAVOURS *FRIDAY FLASH EXTENDED *",
       "url": "https://supplementscanada.com/products/barebells-protein-bar-12x55g-box?variant=67676883943497"
     },
     "Supplements Canada:15804650684489:67676934144073": {
@@ -27466,7 +27466,7 @@
       "price": 39.99,
       "price_changed_at": "2026-10-23T13:33:01+00:00",
       "store": "Supplements Canada",
-      "title": "Barebells Protein Bar - 12 x 55g / Box  *NEW FLAVOURS *FRIDAY FLASH*",
+      "title": "Barebells Protein Bar - 12 x 55g / Box  *NEW FLAVOURS *FRIDAY FLASH EXTENDED *",
       "url": "https://supplementscanada.com/products/barebells-protein-bar-12x55g-box?variant=67676934144073"
     },
     "Supplements Canada:15804650684489:67676990996553": {
@@ -27481,7 +27481,7 @@
       "price": 39.99,
       "price_changed_at": "2026-10-23T13:33:01+00:00",
       "store": "Supplements Canada",
-      "title": "Barebells Protein Bar - 12 x 55g / Box  *NEW FLAVOURS *FRIDAY FLASH*",
+      "title": "Barebells Protein Bar - 12 x 55g / Box  *NEW FLAVOURS *FRIDAY FLASH EXTENDED *",
       "url": "https://supplementscanada.com/products/barebells-protein-bar-12x55g-box?variant=67676990996553"
     },
     "Supplements Canada:15804650684489:67677092020297": {
@@ -27496,7 +27496,7 @@
       "price": 39.99,
       "price_changed_at": "2026-10-23T13:33:01+00:00",
       "store": "Supplements Canada",
-      "title": "Barebells Protein Bar - 12 x 55g / Box  *NEW FLAVOURS *FRIDAY FLASH*",
+      "title": "Barebells Protein Bar - 12 x 55g / Box  *NEW FLAVOURS *FRIDAY FLASH EXTENDED *",
       "url": "https://supplementscanada.com/products/barebells-protein-bar-12x55g-box?variant=67677092020297"
     },
     "Supplements Canada:15860547977289:67676537585737": {
@@ -28044,14 +28044,14 @@
       "count": 1,
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "Fudge Brownie",
-      "in_stock": false,
+      "in_stock": true,
       "last_seen": "2026-10-24T01:39:48+00:00",
-      "per_bar": 39.99,
-      "prev_price": null,
-      "price": 39.99,
-      "price_changed_at": null,
+      "per_bar": 37.0,
+      "prev_price": 39.99,
+      "price": 37.0,
+      "price_changed_at": "2026-10-24T07:23:05+00:00",
       "store": "Supplements Canada",
-      "title": "Warrior Supplements Crunch Bars - 12 x 64 Grams * DOOR CRASHER*",
+      "title": "Warrior Supplements Crunch Bars - 12 x 64 Grams * HOT HALLOWEEN SALE*",
       "url": "https://supplementscanada.com/products/warrior-supplements-crunch-bars?variant=54358081765449"
     },
     "Supplements Canada:6959621832777:55773275750473": {
@@ -28647,7 +28647,7 @@
       "price": 4.99,
       "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
-      "title": "Protein Candy - 55g *FRIDAY FLASH*",
+      "title": "Protein Candy - 55g *FRIDAY FLASH EXTENDED *",
       "url": "https://supplementscanada.com/products/protein-candy-55g?variant=41653462433865"
     },
     "Supplements Canada:7297180794953:55657284894793": {
@@ -28662,7 +28662,7 @@
       "price": 4.99,
       "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
-      "title": "Protein Candy - 55g *FRIDAY FLASH*",
+      "title": "Protein Candy - 55g *FRIDAY FLASH EXTENDED *",
       "url": "https://supplementscanada.com/products/protein-candy-55g?variant=55657284894793"
     },
     "Supplements Canada:7297180794953:55703849795657": {
@@ -28677,7 +28677,7 @@
       "price": 4.99,
       "price_changed_at": "2026-10-11T18:08:43+00:00",
       "store": "Supplements Canada",
-      "title": "Protein Candy - 55g *FRIDAY FLASH*",
+      "title": "Protein Candy - 55g *FRIDAY FLASH EXTENDED *",
       "url": "https://supplementscanada.com/products/protein-candy-55g?variant=55703849795657"
     },
     "Supplements Canada:7351768547401:41824548192329": {
@@ -59342,6 +59342,6 @@
       "url": "https://well.ca/products/pure-protein-bar-chewy-chocolate_97331.html"
     }
   },
-  "last_run": "2026-10-24T01:39:48+00:00",
+  "last_run": "2026-10-24T07:23:05+00:00",
   "version": 1
 }
