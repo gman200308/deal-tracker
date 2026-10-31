@@ -22,7 +22,7 @@
     },
     "Chicks and Muscles": {
       "fail_streak": 0,
-      "usual_products": 419,
+      "usual_products": 418,
       "warned": false
     },
     "Dive Bar (US)": {
@@ -37,7 +37,7 @@
     },
     "NutriCartel (US)": {
       "fail_streak": 0,
-      "usual_products": 2446,
+      "usual_products": 2447,
       "warned": false
     },
     "Nutrition Depot (US)": {
@@ -47,7 +47,7 @@
     },
     "Nutrition House": {
       "fail_streak": 0,
-      "usual_products": 4864,
+      "usual_products": 4863,
       "warned": false
     },
     "PoorBoy Supplements (US)": {
@@ -72,7 +72,7 @@
     },
     "SupplementSource": {
       "fail_streak": 0,
-      "usual_products": 888,
+      "usual_products": 889,
       "warned": false
     },
     "Supplements Canada": {
@@ -97,7 +97,7 @@
     },
     "Vitamart": {
       "fail_streak": 0,
-      "usual_products": 12089,
+      "usual_products": 12097,
       "warned": false
     },
     "Well.ca": {
@@ -8692,7 +8692,7 @@
       "count": 12,
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "1 Box (12 Bars) / Chocolate Sea Salt Brownie",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-10-31T02:28:45+00:00",
       "per_bar": 4.65,
       "prev_price": 55.93,
@@ -15578,7 +15578,7 @@
       "per_bar": 3.55,
       "prev_price": 44.99,
       "price": 3.55,
-      "price_changed_at": "2026-10-31T02:28:45+00:00",
+      "price_changed_at": "2026-10-31T09:46:21+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Peanut Butter Cups \u2013 Chocolat & Beurre d\u2019Arachide",
       "url": "https://www.proteinarabais.com/quest-peanut-butter-cups-chocolat-et-beurre-darachide"
@@ -16230,7 +16230,7 @@
       "per_bar": 1.75,
       "prev_price": 1.99,
       "price": 20.99,
-      "price_changed_at": "2026-10-31T02:28:45+00:00",
+      "price_changed_at": "2026-10-31T09:46:21+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Carb Killa barre de prot\u00e9ine",
       "url": "https://www.proteinarabais.com/carb-killa-barre-de-proteine"
@@ -16260,7 +16260,7 @@
       "per_bar": 1.78,
       "prev_price": 19.99,
       "price": 24.99,
-      "price_changed_at": "2026-10-31T02:28:45+00:00",
+      "price_changed_at": "2026-10-31T09:46:21+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest\u00ae Mini Bars",
       "url": "https://www.proteinarabais.com/quest-mini-bars"
@@ -16320,7 +16320,7 @@
       "per_bar": 1.99,
       "prev_price": 39.99,
       "price": 1.99,
-      "price_changed_at": "2026-10-31T02:28:45+00:00",
+      "price_changed_at": "2026-10-31T09:46:21+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Bars",
       "url": "https://www.proteinarabais.com/quest-bars"
@@ -21573,7 +21573,7 @@
       "count": 1,
       "first_seen": "2026-10-27T19:28:03+00:00",
       "flavor": "Peppermint / 12-Aug-26",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-10-31T02:28:45+00:00",
       "per_bar": 2.0,
       "prev_price": 3.0,
@@ -25154,7 +25154,7 @@
       "count": 12,
       "first_seen": "2026-10-30T23:00:29+00:00",
       "flavor": "Birthday Cake / 12-Dec-26",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-10-31T02:28:45+00:00",
       "per_bar": 2.5,
       "prev_price": null,
@@ -56506,10 +56506,10 @@
       "flavor": "",
       "in_stock": true,
       "last_seen": "2026-10-31T02:28:45+00:00",
-      "per_bar": 5.09,
-      "prev_price": 5.99,
-      "price": 5.09,
-      "price_changed_at": "2026-10-27T23:50:12+00:00",
+      "per_bar": 5.99,
+      "prev_price": 5.09,
+      "price": 5.99,
+      "price_changed_at": "2026-10-31T09:46:21+00:00",
       "store": "Well.ca",
       "title": "Herbaland Snacks With Benefits Mixed Berry Protein Gummies (50 g)",
       "url": "https://well.ca/products/herbaland-snacks-with-benefits-mixed_142516.html"
@@ -57330,7 +57330,7 @@
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-10-29T05:57:03+00:00",
+      "last_seen": "2026-10-31T09:46:21+00:00",
       "per_bar": 2.99,
       "prev_price": 2.69,
       "price": 2.99,
@@ -57345,7 +57345,7 @@
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-10-29T05:57:03+00:00",
+      "last_seen": "2026-10-31T09:46:21+00:00",
       "per_bar": 2.99,
       "prev_price": 2.69,
       "price": 2.99,
@@ -57914,12 +57914,12 @@
       "count": 1,
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "",
-      "in_stock": false,
-      "last_seen": "2026-10-21T01:40:44+00:00",
-      "per_bar": 2.69,
-      "prev_price": 2.99,
-      "price": 2.69,
-      "price_changed_at": "2026-10-12T09:21:41+00:00",
+      "in_stock": true,
+      "last_seen": "2026-10-31T09:46:21+00:00",
+      "per_bar": 2.99,
+      "prev_price": 2.69,
+      "price": 2.99,
+      "price_changed_at": "2026-10-31T09:46:21+00:00",
       "store": "Well.ca",
       "title": "NuGo Dark Protein Bar Chocolate Chip (50 g)",
       "url": "https://well.ca/products/nugo-dark-protein-bar-chocolate-chip_317455.html"
@@ -57930,11 +57930,11 @@
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-10-15T01:32:45+00:00",
-      "per_bar": 2.69,
-      "prev_price": 2.99,
-      "price": 2.69,
-      "price_changed_at": "2026-10-12T09:21:41+00:00",
+      "last_seen": "2026-10-31T09:46:21+00:00",
+      "per_bar": 2.99,
+      "prev_price": 2.69,
+      "price": 2.99,
+      "price_changed_at": "2026-10-31T09:46:21+00:00",
       "store": "Well.ca",
       "title": "NuGo Dark Protein Bar Chocolate Pretzel (50 g)",
       "url": "https://well.ca/products/nugo-dark-protein-bar-chocolate_317456.html"
@@ -57945,11 +57945,11 @@
       "first_seen": "2026-09-28T08:46:04+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-10-15T01:32:45+00:00",
-      "per_bar": 2.69,
-      "prev_price": 2.99,
-      "price": 2.69,
-      "price_changed_at": "2026-10-12T09:21:41+00:00",
+      "last_seen": "2026-10-31T09:46:21+00:00",
+      "per_bar": 2.99,
+      "prev_price": 2.69,
+      "price": 2.99,
+      "price_changed_at": "2026-10-31T09:46:21+00:00",
       "store": "Well.ca",
       "title": "NuGo Dark Protein Bar Mint Chocolate Chip (50 g)",
       "url": "https://well.ca/products/nugo-dark-protein-bar-mint-chocolate_317457.html"
@@ -58171,10 +58171,10 @@
       "flavor": "",
       "in_stock": true,
       "last_seen": "2026-10-31T02:28:45+00:00",
-      "per_bar": 2.36,
-      "prev_price": 2.49,
-      "price": 2.36,
-      "price_changed_at": "2026-10-27T23:50:12+00:00",
+      "per_bar": 2.49,
+      "prev_price": 2.36,
+      "price": 2.49,
+      "price_changed_at": "2026-10-31T09:46:21+00:00",
       "store": "Well.ca",
       "title": "Simply Protein Plant Based Protein Bars Dark Chocolate Almond (30 g)",
       "url": "https://well.ca/products/simply-protein-plant-based-protein_318987.html"
@@ -58201,10 +58201,10 @@
       "flavor": "",
       "in_stock": true,
       "last_seen": "2026-10-31T02:28:45+00:00",
-      "per_bar": 2.36,
-      "prev_price": 2.49,
-      "price": 2.36,
-      "price_changed_at": "2026-10-27T23:50:12+00:00",
+      "per_bar": 2.49,
+      "prev_price": 2.36,
+      "price": 2.49,
+      "price_changed_at": "2026-10-31T09:46:21+00:00",
       "store": "Well.ca",
       "title": "Simply Protein Plant Based Protein Bars Peanut Butter Chocolate (30 g)",
       "url": "https://well.ca/products/simply-protein-plant-based-protein_318989.html"
@@ -59611,10 +59611,10 @@
       "flavor": "",
       "in_stock": true,
       "last_seen": "2026-10-31T02:28:45+00:00",
-      "per_bar": 3.31,
-      "prev_price": 3.49,
-      "price": 3.31,
-      "price_changed_at": "2026-10-27T23:50:12+00:00",
+      "per_bar": 3.49,
+      "prev_price": 3.31,
+      "price": 3.49,
+      "price_changed_at": "2026-10-31T09:46:21+00:00",
       "store": "Well.ca",
       "title": "Simply Protein Stacked Bars Salted Caramel Crisp (45 g)",
       "url": "https://well.ca/products/simply-protein-stacked-bars-salted_345304.html"
@@ -60730,6 +60730,6 @@
       "url": "https://well.ca/products/pure-protein-bar-chewy-chocolate_97331.html"
     }
   },
-  "last_run": "2026-10-31T02:28:45+00:00",
+  "last_run": "2026-10-31T09:46:21+00:00",
   "version": 1
 }
