@@ -37,7 +37,7 @@
     },
     "NutriCartel (US)": {
       "fail_streak": 0,
-      "usual_products": 2453,
+      "usual_products": 2454,
       "warned": false
     },
     "Nutrition Depot (US)": {
@@ -47,7 +47,7 @@
     },
     "Nutrition House": {
       "fail_streak": 0,
-      "usual_products": 4844,
+      "usual_products": 4836,
       "warned": false
     },
     "PoorBoy Supplements (US)": {
@@ -77,7 +77,7 @@
     },
     "Supplements Canada": {
       "fail_streak": 0,
-      "usual_products": 958,
+      "usual_products": 957,
       "warned": false
     },
     "Supplements Direct": {
@@ -97,12 +97,12 @@
     },
     "Vitamart": {
       "fail_streak": 0,
-      "usual_products": 12176,
+      "usual_products": 12174,
       "warned": false
     },
     "Well.ca": {
       "fail_streak": 0,
-      "usual_products": 322,
+      "usual_products": 323,
       "warned": false
     }
   },
@@ -15535,7 +15535,7 @@
       "per_bar": 3.55,
       "prev_price": 44.99,
       "price": 3.55,
-      "price_changed_at": "2026-11-08T00:44:29+00:00",
+      "price_changed_at": "2026-11-08T07:27:48+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Peanut Butter Cups \u2013 Chocolat & Beurre d\u2019Arachide",
       "url": "https://www.proteinarabais.com/quest-peanut-butter-cups-chocolat-et-beurre-darachide"
@@ -16172,7 +16172,7 @@
       "per_bar": 1.75,
       "prev_price": 1.99,
       "price": 20.99,
-      "price_changed_at": "2026-11-08T00:44:29+00:00",
+      "price_changed_at": "2026-11-08T07:27:48+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Carb Killa barre de prot\u00e9ine",
       "url": "https://www.proteinarabais.com/carb-killa-barre-de-proteine"
@@ -16202,7 +16202,7 @@
       "per_bar": 1.78,
       "prev_price": 19.99,
       "price": 24.99,
-      "price_changed_at": "2026-11-08T00:44:29+00:00",
+      "price_changed_at": "2026-11-08T07:27:48+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest\u00ae Mini Bars",
       "url": "https://www.proteinarabais.com/quest-mini-bars"
@@ -16262,7 +16262,7 @@
       "per_bar": 1.99,
       "prev_price": 39.99,
       "price": 1.99,
-      "price_changed_at": "2026-11-08T00:44:29+00:00",
+      "price_changed_at": "2026-11-08T07:27:48+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Bars",
       "url": "https://www.proteinarabais.com/quest-bars"
@@ -18279,47 +18279,6 @@
       "title": "Beignes prot\u00e9in\u00e9s - Protein Donuts",
       "url": "https://www.proteinarabais.com/beignes-proteines-protein-donuts"
     },
-    "Protein \u00e0 Rabais:19877:NEBAP-M-BB": {
-      "best_before": null,
-      "count": 12,
-      "first_seen": "2026-09-27T00:47:07+00:00",
-      "flavor": "Bleuet / Boite de 12",
-      "in_stock": false,
-      "last_seen": "2026-10-09T02:15:39+00:00",
-      "per_bar": 6.25,
-      "price": 74.99,
-      "store": "Protein \u00e0 Rabais",
-      "title": "Prime Bites Mini Muffins",
-      "url": "https://www.proteinarabais.com/prime-bites-mini-muffins"
-    },
-    "Protein \u00e0 Rabais:19877:NEBAP-M-BBu": {
-      "best_before": null,
-      "count": 1,
-      "first_seen": "2026-09-27T00:47:07+00:00",
-      "flavor": "Bleuet / unit\u00e9",
-      "in_stock": false,
-      "last_seen": "2026-10-09T02:15:39+00:00",
-      "per_bar": 6.25,
-      "price": 6.25,
-      "store": "Protein \u00e0 Rabais",
-      "title": "Prime Bites Mini Muffins",
-      "url": "https://www.proteinarabais.com/prime-bites-mini-muffins"
-    },
-    "Protein \u00e0 Rabais:19877:NEBAP-M-BC": {
-      "best_before": null,
-      "count": 12,
-      "first_seen": "2026-09-27T00:47:07+00:00",
-      "flavor": "G\u00e2teau de f\u00eate (50% - 7X 11/26) / Boite de 12",
-      "in_stock": true,
-      "last_seen": "2026-10-09T02:15:39+00:00",
-      "per_bar": 3.12,
-      "prev_price": 74.99,
-      "price": 37.5,
-      "price_changed_at": "2026-10-08T22:09:47+00:00",
-      "store": "Protein \u00e0 Rabais",
-      "title": "Prime Bites Mini Muffins",
-      "url": "https://www.proteinarabais.com/prime-bites-mini-muffins"
-    },
     "Protein \u00e0 Rabais:19877:NEBAP-M-BCu": {
       "best_before": null,
       "count": 1,
@@ -18330,21 +18289,6 @@
       "per_bar": 3.15,
       "prev_price": 6.25,
       "price": 3.15,
-      "price_changed_at": "2026-10-08T22:09:47+00:00",
-      "store": "Protein \u00e0 Rabais",
-      "title": "Prime Bites Mini Muffins",
-      "url": "https://www.proteinarabais.com/prime-bites-mini-muffins"
-    },
-    "Protein \u00e0 Rabais:19877:NEBAP-M-CC": {
-      "best_before": null,
-      "count": 12,
-      "first_seen": "2026-09-27T00:47:07+00:00",
-      "flavor": "P\u00e9pites de chocolat (50% - 3X 11/26) / Boite de 12",
-      "in_stock": true,
-      "last_seen": "2026-10-09T02:15:39+00:00",
-      "per_bar": 3.12,
-      "prev_price": 74.99,
-      "price": 37.5,
       "price_changed_at": "2026-10-08T22:09:47+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Prime Bites Mini Muffins",
@@ -18361,45 +18305,6 @@
       "prev_price": 6.25,
       "price": 3.15,
       "price_changed_at": "2026-10-08T22:09:47+00:00",
-      "store": "Protein \u00e0 Rabais",
-      "title": "Prime Bites Mini Muffins",
-      "url": "https://www.proteinarabais.com/prime-bites-mini-muffins"
-    },
-    "Protein \u00e0 Rabais:19877:NEBAP-M-CF": {
-      "best_before": null,
-      "count": 12,
-      "first_seen": "2026-09-27T00:47:07+00:00",
-      "flavor": "Chocolat Fudge / Boite de 12",
-      "in_stock": false,
-      "last_seen": "2026-10-09T02:15:39+00:00",
-      "per_bar": 6.25,
-      "price": 74.99,
-      "store": "Protein \u00e0 Rabais",
-      "title": "Prime Bites Mini Muffins",
-      "url": "https://www.proteinarabais.com/prime-bites-mini-muffins"
-    },
-    "Protein \u00e0 Rabais:19877:NEBAP-M-CFu": {
-      "best_before": null,
-      "count": 1,
-      "first_seen": "2026-09-27T00:47:07+00:00",
-      "flavor": "Chocolat Fudge / unit\u00e9",
-      "in_stock": false,
-      "last_seen": "2026-10-09T02:15:39+00:00",
-      "per_bar": 6.25,
-      "price": 6.25,
-      "store": "Protein \u00e0 Rabais",
-      "title": "Prime Bites Mini Muffins",
-      "url": "https://www.proteinarabais.com/prime-bites-mini-muffins"
-    },
-    "Protein \u00e0 Rabais:19877:NEBAP-M-CR": {
-      "best_before": null,
-      "count": 12,
-      "first_seen": "2026-09-27T00:47:07+00:00",
-      "flavor": "Pomme, cannelle et raisin / Boite de 12",
-      "in_stock": false,
-      "last_seen": "2026-10-09T02:15:39+00:00",
-      "per_bar": 6.25,
-      "price": 74.99,
       "store": "Protein \u00e0 Rabais",
       "title": "Prime Bites Mini Muffins",
       "url": "https://www.proteinarabais.com/prime-bites-mini-muffins"
@@ -18640,21 +18545,6 @@
       "title": "Prime Bites - Protein Brownies",
       "url": "https://www.proteinarabais.com/prime-bites-protein-brownies"
     },
-    "Protein \u00e0 Rabais:19881:NEBAP-GMu": {
-      "best_before": null,
-      "count": 1,
-      "first_seen": "2026-09-27T00:47:07+00:00",
-      "flavor": "Unit\u00e9 / MINT CHOCOLATE CHIP (50% DE RABAIS - 10X 12/26)",
-      "in_stock": true,
-      "last_seen": "2026-10-09T02:15:39+00:00",
-      "per_bar": 3.15,
-      "prev_price": 6.25,
-      "price": 3.15,
-      "price_changed_at": "2026-10-08T22:09:47+00:00",
-      "store": "Protein \u00e0 Rabais",
-      "title": "Prime Bites - Protein Brownies",
-      "url": "https://www.proteinarabais.com/prime-bites-protein-brownies"
-    },
     "Protein \u00e0 Rabais:19881:NEBAP-GS": {
       "best_before": null,
       "count": 12,
@@ -18665,21 +18555,6 @@
       "per_bar": 3.12,
       "prev_price": 74.99,
       "price": 37.49,
-      "price_changed_at": "2026-10-08T22:09:47+00:00",
-      "store": "Protein \u00e0 Rabais",
-      "title": "Prime Bites - Protein Brownies",
-      "url": "https://www.proteinarabais.com/prime-bites-protein-brownies"
-    },
-    "Protein \u00e0 Rabais:19881:NEBAP-GSu": {
-      "best_before": null,
-      "count": 1,
-      "first_seen": "2026-09-27T00:47:07+00:00",
-      "flavor": "Unit\u00e9 / S\u2019MORES (50% DE RABAIS - 5X 11/26)",
-      "in_stock": true,
-      "last_seen": "2026-10-09T02:15:39+00:00",
-      "per_bar": 3.15,
-      "prev_price": 6.25,
-      "price": 3.15,
       "price_changed_at": "2026-10-08T22:09:47+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Prime Bites - Protein Brownies",
@@ -27539,21 +27414,6 @@
       "title": "Mrs. Taste Cookie'wich 50 Grams / Single *NEW* *HOT BUY*",
       "url": "https://supplementscanada.com/products/mrs-taste-cookie-wich-50g-single?variant=56101647384649"
     },
-    "Supplements Canada:15798274490441:56121906856009": {
-      "best_before": "2026-10-30",
-      "count": 12,
-      "first_seen": "2026-09-27T00:47:07+00:00",
-      "flavor": "",
-      "in_stock": false,
-      "last_seen": "2026-10-09T02:15:39+00:00",
-      "per_bar": 2.0,
-      "prev_price": 39.99,
-      "price": 24.0,
-      "price_changed_at": "2026-10-02T23:50:21+00:00",
-      "store": "Supplements Canada",
-      "title": "JimmyBar Functional Protein Bar - 12 x 58g / Box  Golden Vanilla expires 10/30/2026",
-      "url": "https://supplementscanada.com/products/jimmybar-functional-protein-bar-12-x-58g-box-1?variant=56121906856009"
-    },
     "Supplements Canada:15804650684489:56132693033033": {
       "best_before": null,
       "count": 12,
@@ -30271,7 +30131,7 @@
       "count": 1,
       "first_seen": "2026-10-16T21:19:14+00:00",
       "flavor": "",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-11-08T00:44:29+00:00",
       "per_bar": 3.99,
       "prev_price": null,
@@ -31848,7 +31708,7 @@
       "count": 12,
       "first_seen": "2026-09-26T23:21:32+00:00",
       "flavor": "",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-11-08T00:44:29+00:00",
       "per_bar": 4.83,
       "prev_price": null,
@@ -33728,19 +33588,6 @@
       "store": "Top Nutrition & Fitness",
       "title": "Quest Nutrition Hero Crispy Protein Bar (1 bar)",
       "url": "https://topnutritionandfitness.com/products/quest-nutrition-hero-protein-bar-1-bar?variant=42629791383626"
-    },
-    "Top Nutrition & Fitness:6884505485386:67636806877258": {
-      "best_before": null,
-      "count": 1,
-      "first_seen": "2026-10-07T21:21:05+00:00",
-      "flavor": "Oatmeal Chocolate Chip",
-      "in_stock": false,
-      "last_seen": "2026-10-09T02:15:39+00:00",
-      "per_bar": 2.99,
-      "price": 2.99,
-      "store": "Top Nutrition & Fitness",
-      "title": "Quest Nutrition Hero Crispy Protein Bar (1 bar)",
-      "url": "https://topnutritionandfitness.com/products/quest-nutrition-hero-protein-bar-1-bar?variant=67636806877258"
     },
     "Top Nutrition & Fitness:6887807483978:39871476269130": {
       "best_before": null,
@@ -56879,7 +56726,7 @@
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-11-07T02:55:29+00:00",
+      "last_seen": "2026-11-08T07:27:48+00:00",
       "per_bar": 1.9,
       "prev_price": 15.19,
       "price": 18.99,
@@ -56924,7 +56771,7 @@
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-11-07T02:55:29+00:00",
+      "last_seen": "2026-11-08T07:27:48+00:00",
       "per_bar": 2.5,
       "prev_price": 9.49,
       "price": 9.99,
@@ -57944,7 +57791,7 @@
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-11-07T02:55:29+00:00",
+      "last_seen": "2026-11-08T07:27:48+00:00",
       "per_bar": 2.99,
       "prev_price": null,
       "price": 2.99,
@@ -57959,7 +57806,7 @@
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-11-07T02:55:29+00:00",
+      "last_seen": "2026-11-08T07:27:48+00:00",
       "per_bar": 2.99,
       "prev_price": 2.84,
       "price": 2.99,
@@ -58079,7 +57926,7 @@
       "first_seen": "2026-10-01T14:34:23+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-11-07T02:55:29+00:00",
+      "last_seen": "2026-11-08T07:27:48+00:00",
       "per_bar": 3.79,
       "prev_price": null,
       "price": 22.74,
@@ -58094,7 +57941,7 @@
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-11-07T02:55:29+00:00",
+      "last_seen": "2026-11-08T07:27:48+00:00",
       "per_bar": 3.12,
       "prev_price": 11.86,
       "price": 12.49,
@@ -58199,7 +58046,7 @@
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-11-07T02:55:29+00:00",
+      "last_seen": "2026-11-08T07:27:48+00:00",
       "per_bar": 4.49,
       "prev_price": null,
       "price": 26.94,
@@ -60384,6 +60231,6 @@
       "url": "https://well.ca/products/pure-protein-bar-chewy-chocolate_97331.html"
     }
   },
-  "last_run": "2026-11-08T00:44:29+00:00",
+  "last_run": "2026-11-08T07:27:48+00:00",
   "version": 1
 }
