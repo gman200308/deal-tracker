@@ -47,7 +47,7 @@
     },
     "Nutrition House": {
       "fail_streak": 0,
-      "usual_products": 4791,
+      "usual_products": 4790,
       "warned": false
     },
     "PoorBoy Supplements (US)": {
@@ -97,12 +97,12 @@
     },
     "Vitamart": {
       "fail_streak": 0,
-      "usual_products": 12243,
+      "usual_products": 12244,
       "warned": false
     },
     "Well.ca": {
       "fail_streak": 0,
-      "usual_products": 304,
+      "usual_products": 301,
       "warned": false
     }
   },
@@ -15493,7 +15493,7 @@
       "per_bar": 3.55,
       "prev_price": 44.99,
       "price": 3.55,
-      "price_changed_at": "2026-11-15T02:46:49+00:00",
+      "price_changed_at": "2026-11-15T11:09:20+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Peanut Butter Cups \u2013 Chocolat & Beurre d\u2019Arachide",
       "url": "https://www.proteinarabais.com/quest-peanut-butter-cups-chocolat-et-beurre-darachide"
@@ -16130,7 +16130,7 @@
       "per_bar": 1.75,
       "prev_price": 1.99,
       "price": 20.99,
-      "price_changed_at": "2026-11-15T02:46:49+00:00",
+      "price_changed_at": "2026-11-15T11:09:20+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Carb Killa barre de prot\u00e9ine",
       "url": "https://www.proteinarabais.com/carb-killa-barre-de-proteine"
@@ -16160,7 +16160,7 @@
       "per_bar": 1.78,
       "prev_price": 19.99,
       "price": 24.99,
-      "price_changed_at": "2026-11-15T02:46:49+00:00",
+      "price_changed_at": "2026-11-15T11:09:20+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest\u00ae Mini Bars",
       "url": "https://www.proteinarabais.com/quest-mini-bars"
@@ -16220,7 +16220,7 @@
       "per_bar": 1.99,
       "prev_price": 39.99,
       "price": 1.99,
-      "price_changed_at": "2026-11-15T02:46:49+00:00",
+      "price_changed_at": "2026-11-15T11:09:20+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Bars",
       "url": "https://www.proteinarabais.com/quest-bars"
@@ -29768,7 +29768,7 @@
       "count": 1,
       "first_seen": "2026-09-26T22:46:31+00:00",
       "flavor": "Salty Caramel Crunch (EU)",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-11-15T02:46:49+00:00",
       "per_bar": 6.49,
       "prev_price": null,
@@ -39495,7 +39495,7 @@
       "count": 7,
       "first_seen": "2026-09-26T23:21:32+00:00",
       "flavor": "Ketchup",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-11-15T02:46:49+00:00",
       "per_bar": 4.86,
       "prev_price": null,
@@ -57227,7 +57227,7 @@
       "first_seen": "2026-10-28T23:17:39+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-11-13T01:54:29+00:00",
+      "last_seen": "2026-11-15T11:09:20+00:00",
       "per_bar": 2.6,
       "prev_price": null,
       "price": 12.99,
@@ -57992,7 +57992,7 @@
       "first_seen": "2026-09-27T00:47:07+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-11-14T14:15:16+00:00",
+      "last_seen": "2026-11-15T11:09:20+00:00",
       "per_bar": 2.96,
       "prev_price": 12.49,
       "price": 11.86,
@@ -59762,7 +59762,7 @@
       "first_seen": "2026-10-07T15:36:29+00:00",
       "flavor": "",
       "in_stock": true,
-      "last_seen": "2026-11-14T14:15:16+00:00",
+      "last_seen": "2026-11-15T11:09:20+00:00",
       "per_bar": 3.39,
       "prev_price": 3.99,
       "price": 3.39,
@@ -60357,6 +60357,6 @@
       "url": "https://well.ca/products/pure-protein-bar-chewy-chocolate_97331.html"
     }
   },
-  "last_run": "2026-11-15T02:46:49+00:00",
+  "last_run": "2026-11-15T11:09:20+00:00",
   "version": 1
 }
