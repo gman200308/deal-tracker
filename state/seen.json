@@ -77,7 +77,7 @@
     },
     "Supplements Canada": {
       "fail_streak": 0,
-      "usual_products": 959,
+      "usual_products": 960,
       "warned": false
     },
     "Supplements Direct": {
@@ -102,7 +102,7 @@
     },
     "Well.ca": {
       "fail_streak": 0,
-      "usual_products": 296,
+      "usual_products": 292,
       "warned": false
     }
   },
@@ -15561,7 +15561,7 @@
       "per_bar": 3.55,
       "prev_price": 44.99,
       "price": 3.55,
-      "price_changed_at": "2026-11-22T00:24:15+00:00",
+      "price_changed_at": "2026-11-22T08:05:46+00:00",
       "store": "Protein \u00e0 Rabais",
       "title": "Quest Peanut Butter Cups \u2013 Chocolat & Beurre d\u2019Arachide",
       "url": "https://www.proteinarabais.com/quest-peanut-butter-cups-chocolat-et-beurre-darachide"
@@ -16782,21 +16782,6 @@
       "title": "Go Gummy",
       "url": "https://www.proteinarabais.com/go-gummy"
     },
-    "Protein \u00e0 Rabais:16415:16415-17": {
-      "best_before": null,
-      "count": 12,
-      "first_seen": "2026-10-01T20:22:49+00:00",
-      "flavor": "12 x 50 g / Saveur m\u00e9lang\u00e9 - 12 x 50g",
-      "in_stock": true,
-      "last_seen": "2026-10-23T01:36:05+00:00",
-      "per_bar": 3.33,
-      "prev_price": null,
-      "price": 39.99,
-      "price_changed_at": null,
-      "store": "Protein \u00e0 Rabais",
-      "title": "Go Gummy",
-      "url": "https://www.proteinarabais.com/go-gummy"
-    },
     "Protein \u00e0 Rabais:16415:GO4059U": {
       "best_before": null,
       "count": 1,
@@ -17029,21 +17014,6 @@
       "prev_price": 3.99,
       "price": 3.33,
       "price_changed_at": "2026-11-02T17:10:57+00:00",
-      "store": "Protein \u00e0 Rabais",
-      "title": "Go Gummy",
-      "url": "https://www.proteinarabais.com/go-gummy"
-    },
-    "Protein \u00e0 Rabais:16415:LIQUIDATION_GO4059U": {
-      "best_before": "2026-06-30",
-      "count": 1,
-      "first_seen": "2026-09-27T00:47:07+00:00",
-      "flavor": "1 x 50 g (unit\u00e9) / Framboise (reste 3x exp. 06/26)",
-      "in_stock": true,
-      "last_seen": "2026-10-23T01:36:05+00:00",
-      "per_bar": 1.99,
-      "prev_price": null,
-      "price": 1.99,
-      "price_changed_at": null,
       "store": "Protein \u00e0 Rabais",
       "title": "Go Gummy",
       "url": "https://www.proteinarabais.com/go-gummy"
@@ -21663,51 +21633,6 @@
       "title": "SINGLE BAR Quest PROTEIN BAR, 60g",
       "url": "https://www.supplementsource.ca/products/single-bar-quest-protein-bar-60g?variant=50798988722224"
     },
-    "SupplementSource:10322827608112:50819630334000": {
-      "best_before": "2026-10-30",
-      "count": 12,
-      "first_seen": "2026-10-20T18:30:47+00:00",
-      "flavor": "Golden Vanilla Cookies n Cream / 30-Oct-26",
-      "in_stock": false,
-      "last_seen": "2026-10-23T01:36:05+00:00",
-      "per_bar": 1.67,
-      "prev_price": null,
-      "price": 20.0,
-      "price_changed_at": null,
-      "store": "SupplementSource",
-      "title": "Jimmybar PROTEIN BARS, 12 bars/box",
-      "url": "https://www.supplementsource.ca/products/jimmybars-protein-bars-12-bars-box?variant=50819630334000"
-    },
-    "SupplementSource:10322827608112:50819630366768": {
-      "best_before": "2026-10-30",
-      "count": 12,
-      "first_seen": "2026-10-20T18:30:47+00:00",
-      "flavor": "Chocolate Peanut Butter / 30-Oct-26",
-      "in_stock": true,
-      "last_seen": "2026-10-23T01:36:05+00:00",
-      "per_bar": 1.67,
-      "prev_price": null,
-      "price": 20.0,
-      "price_changed_at": null,
-      "store": "SupplementSource",
-      "title": "Jimmybar PROTEIN BARS, 12 bars/box",
-      "url": "https://www.supplementsource.ca/products/jimmybars-protein-bars-12-bars-box?variant=50819630366768"
-    },
-    "SupplementSource:10322827608112:50819630399536": {
-      "best_before": "2026-10-30",
-      "count": 12,
-      "first_seen": "2026-10-20T18:30:47+00:00",
-      "flavor": "Strawberry Cookies n Cream / 30-Oct-26",
-      "in_stock": false,
-      "last_seen": "2026-10-23T01:36:05+00:00",
-      "per_bar": 1.67,
-      "prev_price": null,
-      "price": 20.0,
-      "price_changed_at": null,
-      "store": "SupplementSource",
-      "title": "Jimmybar PROTEIN BARS, 12 bars/box",
-      "url": "https://www.supplementsource.ca/products/jimmybars-protein-bars-12-bars-box?variant=50819630399536"
-    },
     "SupplementSource:10343689322544:50900025475120": {
       "best_before": "2026-08-12",
       "count": 1,
@@ -24378,12 +24303,12 @@
       "url": "https://www.supplementsource.ca/products/nutraphase-clean-beans-6-x-85g?variant=41967222358064"
     },
     "SupplementSource:7680114163760:42071391010864": {
-      "best_before": "2026-11-30",
+      "best_before": "2026-12-31",
       "count": 12,
       "first_seen": "2026-09-26T22:46:31+00:00",
-      "flavor": "Caramel Cashew / 30-Nov-26",
+      "flavor": "Caramel Cashew / 31-Dec-26",
       "in_stock": true,
-      "last_seen": "2026-11-17T04:37:32+00:00",
+      "last_seen": "2026-11-22T08:05:46+00:00",
       "per_bar": 1.25,
       "prev_price": 20.0,
       "price": 15.0,
@@ -24393,12 +24318,12 @@
       "url": "https://www.supplementsource.ca/products/protein-co-protein-bars-box?variant=42071391010864"
     },
     "SupplementSource:7680114163760:42071391043632": {
-      "best_before": "2026-11-30",
+      "best_before": "2026-12-31",
       "count": 12,
       "first_seen": "2026-09-26T22:46:31+00:00",
-      "flavor": "Chocolate Salty Peanut / 30-Nov-26",
+      "flavor": "Chocolate Salty Peanut / 31-Dec-26",
       "in_stock": true,
-      "last_seen": "2026-11-17T04:37:32+00:00",
+      "last_seen": "2026-11-22T08:05:46+00:00",
       "per_bar": 1.25,
       "prev_price": 20.0,
       "price": 15.0,
@@ -24423,12 +24348,12 @@
       "url": "https://www.supplementsource.ca/products/protein-co-protein-bars-box?variant=42071391076400"
     },
     "SupplementSource:7680114163760:42071391109168": {
-      "best_before": "2026-11-30",
+      "best_before": "2026-12-31",
       "count": 12,
       "first_seen": "2026-09-26T22:46:31+00:00",
-      "flavor": "Crunchy Chocolate Fudge / 30-Nov-26",
+      "flavor": "Crunchy Chocolate Fudge / 31-Dec-26",
       "in_stock": true,
-      "last_seen": "2026-11-17T04:37:32+00:00",
+      "last_seen": "2026-11-22T08:05:46+00:00",
       "per_bar": 1.25,
       "prev_price": 20.0,
       "price": 15.0,
@@ -26438,21 +26363,6 @@
       "store": "Supplements Canada",
       "title": "JimmyBar Protein Bar - 58g Bar / Single *HOT BUY*",
       "url": "https://supplementscanada.com/products/jimmybar-functional-protein-bar-58g?variant=55455348424777"
-    },
-    "Supplements Canada:15467971510345:55455348457545": {
-      "best_before": null,
-      "count": 1,
-      "first_seen": "2026-09-27T00:47:07+00:00",
-      "flavor": "Golden Vanilla Cookies 'n Cream",
-      "in_stock": true,
-      "last_seen": "2026-10-23T01:36:05+00:00",
-      "per_bar": 3.66,
-      "prev_price": null,
-      "price": 3.66,
-      "price_changed_at": null,
-      "store": "Supplements Canada",
-      "title": "JimmyBar Functional Protein Bar - 58g Bar / Single *HOT BUY*",
-      "url": "https://supplementscanada.com/products/jimmybar-functional-protein-bar-58g?variant=55455348457545"
     },
     "Supplements Canada:15467971510345:55455348490313": {
       "best_before": null,
@@ -29801,7 +29711,7 @@
       "count": 12,
       "first_seen": "2026-09-26T23:21:32+00:00",
       "flavor": "Birthday Cake",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-11-22T00:24:15+00:00",
       "per_bar": 4.17,
       "prev_price": null,
@@ -31222,7 +31132,7 @@
       "count": 12,
       "first_seen": "2026-09-26T23:21:32+00:00",
       "flavor": "White Chocolate Mocha",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-11-22T00:24:15+00:00",
       "per_bar": 4.58,
       "prev_price": null,
@@ -37938,7 +37848,7 @@
       "count": 10,
       "first_seen": "2026-09-26T23:21:32+00:00",
       "flavor": "Peanut Butter Coconut",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-11-22T00:24:15+00:00",
       "per_bar": 6.0,
       "prev_price": 54.99,
@@ -40129,7 +40039,7 @@
       "count": 12,
       "first_seen": "2026-09-26T23:21:32+00:00",
       "flavor": "Chocolate Chip Cookie Dough",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-11-22T00:24:15+00:00",
       "per_bar": 7.08,
       "prev_price": null,
@@ -40204,7 +40114,7 @@
       "count": 12,
       "first_seen": "2026-09-26T23:21:32+00:00",
       "flavor": "Cake Batter",
-      "in_stock": true,
+      "in_stock": false,
       "last_seen": "2026-11-22T00:24:15+00:00",
       "per_bar": 7.08,
       "prev_price": null,
@@ -60885,6 +60795,6 @@
       "url": "https://well.ca/products/pure-protein-bar-chewy-chocolate_97331.html"
     }
   },
-  "last_run": "2026-11-22T00:24:15+00:00",
+  "last_run": "2026-11-22T08:05:46+00:00",
   "version": 1
 }
